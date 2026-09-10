@@ -14,13 +14,13 @@ status: review
 
 | 领域 | 当前纳入内容 |
 | --- | --- |
-| [普通物理与物理思想](./general-physics/index.md) | 普通物理、物理学思想与方法 |
-| [力学](./mechanics/index.md) | 普通物理中的力学模块、理论力学 |
-| [热学与统计物理](./thermal-statistical/index.md) | 普通物理中的热学模块、统计力学 |
-| [电磁学与电动力学](./electromagnetism/index.md) | 普通物理中的电磁学模块、电动力学 |
-| [光学](./optics/index.md) | 普通物理中的光学模块 |
-| [量子、原子与近代物理](./quantum-modern/index.md) | 普通物理中的原子或近代物理模块、量子力学 |
-| [凝聚态物理](./condensed-matter/index.md) | 固体物理 |
+| [普通物理与物理思想](./general-physics/index.md) | 物理学整体图景、量纲与估算、建模与近似、对称性与守恒 |
+| [力学](./mechanics/index.md) | 运动与相互作用、守恒定律、振动与波、分析力学与经典动力系统 |
+| [热学与统计物理](./thermal-statistical/index.md) | 热现象、热力学、气体动理论、统计力学 |
+| [电磁学与电动力学](./electromagnetism/index.md) | 电场与磁场、电磁感应、麦克斯韦方程组、电磁波与电动力学 |
+| [光学](./optics/index.md) | 几何光学、干涉、衍射、偏振及光与物质相互作用 |
+| [量子、原子与近代物理](./quantum-modern/index.md) | 原子结构与光谱、近代物理、量子力学 |
+| [凝聚态物理](./condensed-matter/index.md) | 晶体结构、固体中的电子与晶格、材料物性 |
 
 ## 横向板块
 
