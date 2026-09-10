@@ -1,0 +1,19 @@
+{
+  "name": "ellephants",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs --host 127.0.0.1",
+    "build": "npm run check:content-areas && npm run check:content && npm run test:content-submission && vitepress build docs",
+    "preview": "vitepress preview docs --host 127.0.0.1",
+    "check:content": "node scripts/validate-content.mjs",
+    "check:content-areas": "node scripts/sync-content-areas.mjs --check",
+    "sync:content-areas": "node scripts/sync-content-areas.mjs",
+    "test:content-submission": "node scripts/test-content-submission.mjs"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4"
+  }
+}

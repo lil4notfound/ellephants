@@ -1,0 +1,161 @@
+name: Publish approved content
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+concurrency:
+  group: content-publishing
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: >-
+      (github.event.action == 'opened' || github.event.action == 'edited') &&
+      contains(github.event.issue.body, '### 目标领域') &&
+      !contains(github.event.issue.labels.*.name, 'content-published')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Validate submission
+        id: validate
+        continue-on-error: true
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+        run: node scripts/generate-content-from-issue.mjs --validate-only
+
+      - name: Reset review after an edit
+        if: github.event.action == 'edited'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          gh issue edit "$ISSUE_URL" --remove-label content-submission
+          gh issue edit "$ISSUE_URL" --remove-label content-approved
+
+      - name: Prepare labels
+        if: steps.validate.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create content-submission --color C89B5A --description "等待内容审核的结构化投稿" --force
+          gh label create content-approved --color 2E7D32 --description "内容已审核，可以自动发布" --force
+          gh label create content-published --color 6F7B66 --description "内容已由自动化流程发布" --force
+
+      - name: Accept submission
+        if: steps.validate.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          gh issue edit "$ISSUE_URL" --add-label content-submission
+          gh issue comment "$ISSUE_URL" --body "表单格式检查通过。维护者完成内容审核后，请添加 \`content-approved\` 标签；系统随后会生成页面并发布。"
+
+      - name: Reject invalid submission
+        if: steps.validate.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          gh issue comment "$ISSUE_URL" --body "表单未通过格式检查，请根据本次工作流日志编辑 Issue 内容；系统会在保存后重新检查。"
+          exit 1
+
+  publish:
+    if: >-
+      github.event.action == 'labeled' &&
+      github.event.label.name == 'content-approved' &&
+      contains(github.event.issue.labels.*.name, 'content-submission') &&
+      !contains(github.event.issue.labels.*.name, 'content-published')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pages: write
+      id-token: write
+    env:
+      DOCS_BASE: /ellephants/
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate page
+        id: generate
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+        run: node scripts/generate-content-from-issue.mjs
+
+      - name: Validate and build
+        run: npm run build
+
+      - name: Commit generated page
+        env:
+          CONTENT_PATH: ${{ steps.generate.outputs.content_path }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "ellephants content bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$CONTENT_PATH"
+          git commit -m "content: publish issue #$ISSUE_NUMBER"
+          git pull --rebase origin main
+          npm run build
+          git push origin HEAD:main
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+      - name: Mark as published
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          CONTENT_PATH: ${{ steps.generate.outputs.content_path }}
+        run: |
+          gh issue edit "$ISSUE_URL" --add-label content-published
+          gh issue comment "$ISSUE_URL" --body "内容已生成并发布到 \`$CONTENT_PATH\`。"
+          gh issue close "$ISSUE_URL" --reason completed
+
+  deploy:
+    if: github.event.action == 'labeled' && github.event.label.name == 'content-approved'
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,127 @@
+name: 提交知识内容
+description: 通过结构化表单提交课程或专题内容
+title: "[内容投稿] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请按字段填写内容。页面目录、文件名、格式和标签将由系统生成。
+
+  - type: dropdown
+    id: target
+    attributes:
+      label: 目标领域
+      # content-areas:start
+      options:
+        - "数学 / 分析与微分方程"
+        - "数学 / 代数与数论"
+        - "数学 / 几何与拓扑"
+        - "数学 / 概率统计与随机过程"
+        - "数学 / 应用数学与建模"
+        - "物理 / 普通物理与物理思想"
+        - "物理 / 力学"
+        - "物理 / 热学与统计物理"
+        - "物理 / 电磁学与电动力学"
+        - "物理 / 光学"
+        - "物理 / 量子、原子与近代物理"
+        - "物理 / 凝聚态物理"
+        - "物理 / 数学物理方法"
+        - "物理 / 实验物理"
+      # content-areas:end
+    validations:
+      required: true
+
+  - type: dropdown
+    id: page-type
+    attributes:
+      label: 页面类型
+      options:
+        - 课程页
+        - 专题文章
+    validations:
+      required: true
+
+  - type: input
+    id: page-title
+    attributes:
+      label: 页面标题
+      placeholder: 例如：数学分析
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: 页面简介
+      description: 用一至两句话说明页面范围。
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content-kind
+    attributes:
+      label: 内容属性
+      options:
+        - 理论
+        - 实验
+        - 方法
+        - 综合
+    validations:
+      required: true
+
+  - type: input
+    id: attribution
+    attributes:
+      label: 署名
+      description: 可选；留空时使用提交者的 GitHub 用户名。
+
+  - type: textarea
+    id: prerequisites
+    attributes:
+      label: 先修知识
+      description: 可选；每行填写一项。
+
+  - type: textarea
+    id: positioning
+    attributes:
+      label: 页面定位
+      description: 说明研究对象、适用读者和内容边界。
+    validations:
+      required: true
+
+  - type: textarea
+    id: goals
+    attributes:
+      label: 学习目标
+      description: 每行填写一项可验证的学习目标。
+    validations:
+      required: true
+
+  - type: textarea
+    id: main-content
+    attributes:
+      label: 主要内容
+      description: 可使用 Markdown，不接受原始 HTML。
+    validations:
+      required: true
+
+  - type: textarea
+    id: resources
+    attributes:
+      label: 资料链接
+      description: 每行按“名称 | URL | 类型和大小 | 来源与授权 | 使用说明”填写；可留空。
+      placeholder: 数学分析讲义 | https://example.com/notes.pdf | PDF / 12 MB | 作者公开 | 适合入门
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充说明
+      description: 可选；填写常见问题、版本差异或维护信息。
+
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: 授权确认
+      options:
+        - label: 我确认对原创投稿内容拥有相应权利并同意以 CC BY-SA 4.0 发布；第三方内容已标明作者、来源和许可或使用依据。
+          required: true

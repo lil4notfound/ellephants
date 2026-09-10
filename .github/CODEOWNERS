@@ -1,0 +1,11 @@
+# 默认维护者
+* @lil4notfound
+
+# 站点架构
+/docs/.vitepress/ @lil4notfound
+/docs/_template.md @lil4notfound
+/scripts/ @lil4notfound
+/config/ @lil4notfound
+/package.json @lil4notfound
+/package-lock.json @lil4notfound
+/.github/ @lil4notfound
