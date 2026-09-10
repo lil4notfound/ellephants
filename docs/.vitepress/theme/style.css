@@ -99,6 +99,24 @@ body {
   object-position: 50% 34%;
 }
 
+.VPNavBarMenuLink[href*="content-submission.yml"] {
+  height: 36px;
+  margin-left: 8px;
+  padding: 0 15px;
+  color: var(--vp-button-brand-text) !important;
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 2px;
+  background: var(--vp-c-brand-1);
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.VPNavBarMenuLink[href*="content-submission.yml"]:hover {
+  color: var(--vp-button-brand-hover-text) !important;
+  border-color: var(--vp-c-brand-2);
+  background: var(--vp-c-brand-2);
+  transform: translateY(-1px);
+}
+
 .VPHome {
   padding-bottom: 88px;
 }
@@ -280,6 +298,58 @@ body {
   border-left-color: var(--vp-c-brand-1);
 }
 
+.submission-entry {
+  margin: 28px 0 44px;
+  padding: 28px;
+  border-top: 2px solid var(--vp-c-text-1);
+  border-bottom: 1px solid var(--vp-c-divider);
+  background: color-mix(in srgb, var(--vp-c-bg-elv) 72%, transparent);
+}
+
+.submission-entry__label {
+  color: var(--vp-c-brand-1);
+  font-family: var(--vp-font-family-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.submission-entry__title {
+  margin: 10px 0 0 !important;
+  color: var(--vp-c-text-1);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.35 !important;
+}
+
+.submission-entry__description {
+  max-width: 620px;
+  margin: 10px 0 20px !important;
+  color: var(--vp-c-text-2);
+}
+
+.submission-entry__button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  color: var(--vp-button-brand-text) !important;
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 2px;
+  background: var(--vp-c-brand-1);
+  font-weight: 650;
+  text-decoration: none !important;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.submission-entry__button:hover {
+  color: var(--vp-button-brand-hover-text) !important;
+  border-color: var(--vp-c-brand-2);
+  background: var(--vp-c-brand-2);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 959px) {
   .VPHomeHero {
     padding-top: 72px !important;
@@ -341,6 +411,21 @@ body {
   .home-topic:hover {
     padding-right: 8px;
     padding-left: 8px;
+  }
+
+  .submission-entry {
+    margin: 24px -8px 40px;
+    padding: 24px 20px;
+  }
+
+  .submission-entry__title {
+    font-size: 21px;
+  }
+
+  .submission-entry__button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }
 

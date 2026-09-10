@@ -10,9 +10,16 @@ status: review
 
 知识内容通过仓库的“提交知识内容”表单投稿。投稿者只需填写内容，不需要选择文件目录、编写页面配置或操作分支。
 
+<div class="submission-entry">
+  <span class="submission-entry__label">内容投稿入口</span>
+  <p class="submission-entry__title">填写表单，提交新的课程或专题内容</p>
+  <p class="submission-entry__description">系统会处理页面目录、文件名、格式与标签。提交表单需要登录 GitHub。</p>
+  <a class="submission-entry__button" href="https://github.com/lil4notfound/ellephants/issues/new?template=content-submission.yml" target="_blank" rel="noreferrer">打开“提交知识内容”表单 <span aria-hidden="true">↗</span></a>
+</div>
+
 ## 投稿流程
 
-1. 进入仓库的 **Issues → New issue**，选择“提交知识内容”。
+1. 点击上方按钮，打开“提交知识内容”表单。
 2. 选择目标领域、页面类型和内容属性，填写各项内容后提交。
 3. 系统检查表单是否完整；通过后，Issue 会进入等待审核状态。
 4. 维护者核对知识内容、资料来源和授权信息。

@@ -35,7 +35,11 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '知识地图', link: '/knowledge-map/' },
-      { text: '参与共建', link: '/guide/contributing' }
+      { text: '参与共建', link: '/guide/contributing' },
+      {
+        text: '提交内容',
+        link: 'https://github.com/lil4notfound/ellephants/issues/new?template=content-submission.yml'
+      }
     ],
     sidebar: createSidebar(docsRoot),
     outline: {
