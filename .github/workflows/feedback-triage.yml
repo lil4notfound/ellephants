@@ -1,0 +1,26 @@
+name: Label feedback issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+
+jobs:
+  label:
+    if: >-
+      startsWith(github.event.issue.title, '[问题反馈]') &&
+      contains(github.event.issue.body, '### 问题类别') &&
+      contains(github.event.issue.body, '### 问题说明')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Apply feedback label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          gh label create feedback --color B06B2D --description "等待维护者处理的问题反馈" --force
+          gh issue edit "$ISSUE_URL" --add-label feedback

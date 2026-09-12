@@ -15,6 +15,8 @@ ellephants 是一个由社群共同维护的公开学习指南，现阶段收录
 
 知识内容通过仓库的“提交知识内容”Issue 表单投稿。审核通过后，系统会自动生成页面、检查格式并发布。
 
+网站功能、目录结构和视觉交互方面的问题或建议，通过[问题反馈表单](https://github.com/lil4notfound/ellephants/issues/new?template=feedback.yml)提交。反馈会标记为 `feedback` 并等待维护者处理，不会触发内容发布。
+
 站点结构、主题和自动化流程的修改使用分支与 Pull Request。详细要求见 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
 ## 项目结构

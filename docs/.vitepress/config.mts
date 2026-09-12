@@ -37,6 +37,10 @@ export default defineConfig({
       { text: '知识地图', link: '/knowledge-map/' },
       { text: '参与共建', link: '/guide/contributing' },
       {
+        text: '反馈问题',
+        link: 'https://github.com/lil4notfound/ellephants/issues/new?template=feedback.yml'
+      },
+      {
         text: '提交内容',
         link: 'https://github.com/lil4notfound/ellephants/issues/new?template=content-submission.yml',
         noIcon: true

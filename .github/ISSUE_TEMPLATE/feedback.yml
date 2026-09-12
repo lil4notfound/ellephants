@@ -1,0 +1,36 @@
+name: 提交问题反馈
+description: 反馈网站功能、内容目录或视觉交互问题
+title: "[问题反馈] "
+labels:
+  - feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请在页面顶部填写简短标题，再完成以下字段。
+
+  - type: input
+    id: attribution
+    attributes:
+      label: 署名
+      description: 可选；可填写希望公开显示的名字。
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 问题类别
+      options:
+        - 功能建议
+        - 内容与目录建议
+        - 视觉与交互建议
+        - 其他反馈
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: 问题说明
+      description: 请说明遇到的问题或具体建议；如与某个页面有关，请附页面链接。可直接拖入截图。
+    validations:
+      required: true
