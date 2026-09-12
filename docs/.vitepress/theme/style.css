@@ -714,7 +714,7 @@ body {
 [data-visual-theme='field'] .VPHomeHero {
   position: relative;
   padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 110px) !important;
-  padding-bottom: 92px !important;
+  padding-bottom: 32px !important;
 }
 
 [data-visual-theme='field'] .VPHomeHero::before {
@@ -725,7 +725,7 @@ body {
   font-family: var(--vp-font-family-mono);
   font-size: 11px;
   letter-spacing: 0.18em;
-  content: '01  /  KNOWLEDGE IN THE WILD';
+  content: 'KNOWLEDGE IN THE WILD';
 }
 
 [data-visual-theme='field'] .VPHomeHero .container {
@@ -852,7 +852,7 @@ body {
 }
 
 [data-visual-theme='field'] .home-topics {
-  margin-top: 96px;
+  margin-top: 32px;
 }
 
 [data-visual-theme='field'] .home-topics::before {
@@ -1141,7 +1141,7 @@ body {
 
   [data-visual-theme='field'] .VPHomeHero {
     padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 80px) !important;
-    padding-bottom: 64px !important;
+    padding-bottom: 24px !important;
   }
 
   [data-visual-theme='field'] .VPHomeHero::before {
@@ -1175,7 +1175,7 @@ body {
   }
 
   [data-visual-theme='field'] .home-topics {
-    margin-top: 72px;
+    margin-top: 32px;
   }
 
   [data-visual-theme='field'] .home-topic {
