@@ -17,7 +17,12 @@ export default defineConfig({
   cacheDir: resolve(projectRoot, '.cache/vitepress'),
   head: [
     ['meta', { name: 'theme-color', content: '#7a4a21' }],
-    ['meta', { name: 'color-scheme', content: 'light dark' }]
+    ['meta', { name: 'color-scheme', content: 'light dark' }],
+    [
+      'script',
+      {},
+      "try{document.documentElement.dataset.visualTheme=localStorage.getItem('ellephants-visual-theme')==='field'?'field':'classic'}catch(e){document.documentElement.dataset.visualTheme='classic'}"
+    ]
   ],
   vite: {
     server: {
