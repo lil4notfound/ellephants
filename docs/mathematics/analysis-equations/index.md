@@ -18,3 +18,7 @@ status: review
 4. 常微分方程
 5. 偏微分方程
 6. 泛函分析
+
+## 已收录页面
+
+<DirectoryContents />

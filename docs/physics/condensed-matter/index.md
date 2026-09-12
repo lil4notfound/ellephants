@@ -18,3 +18,7 @@ status: review
 4. 半导体基础
 5. 磁性与超导
 6. 低维与新型量子材料
+
+## 已收录页面
+
+<DirectoryContents />

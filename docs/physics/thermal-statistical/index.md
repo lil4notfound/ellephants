@@ -18,3 +18,7 @@ status: review
 4. 系综与统计分布
 5. 经典统计与量子统计
 6. 相变与临界现象
+
+## 已收录页面
+
+<DirectoryContents />

@@ -14,3 +14,7 @@ status: review
 
 1. 普通物理实验
 2. 近代物理实验
+
+## 已收录页面
+
+<DirectoryContents />

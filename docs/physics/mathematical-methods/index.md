@@ -13,3 +13,7 @@ status: review
 ## 内容
 
 1. 数学物理方法
+
+## 已收录页面
+
+<DirectoryContents />

@@ -15,3 +15,7 @@ status: review
 1. 高等代数
 2. 抽象代数
 3. 数论基础
+
+## 已收录页面
+
+<DirectoryContents />

@@ -15,3 +15,7 @@ status: review
 1. 概率论
 2. 数理统计
 3. 应用随机过程
+
+## 已收录页面
+
+<DirectoryContents />

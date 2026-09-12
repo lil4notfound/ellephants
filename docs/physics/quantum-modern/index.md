@@ -18,3 +18,7 @@ status: review
 4. 波函数、算符与测量
 5. 一维与中心势问题
 6. 角动量、自旋与全同粒子
+
+## 已收录页面
+
+<DirectoryContents />
