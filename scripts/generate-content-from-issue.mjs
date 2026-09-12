@@ -18,6 +18,7 @@ const fieldLabels = [
   '主要内容',
   '资料链接',
   '补充说明',
+  '媒体平台转发偏好',
   '授权确认'
 ]
 
@@ -35,6 +36,12 @@ const contentKinds = new Map([
   ['实验', 'experiment'],
   ['方法', 'methods'],
   ['综合', 'overview']
+])
+
+const mediaRepostPreferences = new Map([
+  ['不允许原野象群媒体账号转发', 'declined'],
+  ['允许转发并保留署名', 'attributed'],
+  ['允许转发且无需署名', 'anonymous']
 ])
 
 function escapeRegExp(value) {
@@ -145,14 +152,17 @@ export function prepareSubmission({ body, issueNumber, issueAuthor }) {
   const positioning = requireField(fields, '页面定位')
   const goals = requireField(fields, '学习目标')
   const mainContent = requireField(fields, '主要内容')
+  const mediaRepostLabel = requireField(fields, '媒体平台转发偏好')
   const rights = requireField(fields, '授权确认')
   const target = targetAreas.get(targetLabel)
   const type = pageTypes.get(typeLabel)
   const kind = contentKinds.get(kindLabel)
+  const mediaRepostPreference = mediaRepostPreferences.get(mediaRepostLabel)
 
   if (!target) throw new Error(`未知目标领域：${targetLabel}`)
   if (!type) throw new Error(`未知页面类型：${typeLabel}`)
   if (!kind) throw new Error(`未知内容属性：${kindLabel}`)
+  if (!mediaRepostPreference) throw new Error(`未知媒体平台转发偏好：${mediaRepostLabel}`)
   if (!title) throw new Error('页面标题无效')
   if (!/-\s*\[[xX]\]/.test(rights)) throw new Error('授权确认尚未勾选')
 
@@ -183,6 +193,7 @@ export function prepareSubmission({ body, issueNumber, issueAuthor }) {
       '{{AUTHOR_YAML}}': JSON.stringify([author]),
       '{{TAGS_YAML}}': JSON.stringify(tags),
       '{{PREREQUISITES_YAML}}': JSON.stringify(prerequisites),
+      '{{MEDIA_REPOST_PREFERENCE}}': mediaRepostPreference,
       '{{TITLE}}': title,
       '{{AUTHOR_HTML}}': escapeHtml(author),
       '{{POSITIONING}}': positioning,

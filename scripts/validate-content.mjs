@@ -8,6 +8,7 @@ const docsRoot = join(projectRoot, 'docs')
 const errors = []
 const allowedTypes = new Set(['home', 'index', 'guide', 'course', 'article'])
 const allowedStatuses = new Set(['stub', 'draft', 'review', 'published'])
+const allowedMediaRepostPreferences = new Set(['declined', 'attributed', 'anonymous'])
 const administrativeFields = new Set([
   'course-number',
   'course_number',
@@ -113,6 +114,13 @@ for (const filePath of collectMarkdown(docsRoot)) {
 
     if (frontmatter.license !== 'CC-BY-SA-4.0') {
       errors.push(`${displayPath(filePath)}: course 和 article 页面必须使用 CC-BY-SA-4.0`)
+    }
+
+    if (
+      frontmatter.media_repost_preference &&
+      !allowedMediaRepostPreferences.has(frontmatter.media_repost_preference)
+    ) {
+      errors.push(`${displayPath(filePath)}: media_repost_preference 取值无效`)
     }
   }
 

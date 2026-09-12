@@ -118,6 +118,18 @@ body:
       label: 补充说明
       description: 可选；填写常见问题、版本差异或维护信息。
 
+  - type: dropdown
+    id: media-repost
+    attributes:
+      label: 媒体平台转发偏好
+      description: 本项只用于原野象群自有媒体账号的运营安排，不改变页面内容采用的 CC BY-SA 4.0 许可。
+      options:
+        - 不允许原野象群媒体账号转发
+        - 允许转发并保留署名
+        - 允许转发且无需署名
+    validations:
+      required: true
+
   - type: checkboxes
     id: rights
     attributes:

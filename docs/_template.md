@@ -8,6 +8,7 @@ license: CC-BY-SA-4.0
 authors: {{AUTHOR_YAML}}
 tags: {{TAGS_YAML}}
 prerequisites: {{PREREQUISITES_YAML}}
+media_repost_preference: {{MEDIA_REPOST_PREFERENCE}}
 draft: false
 ---
 

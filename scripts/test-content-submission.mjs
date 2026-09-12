@@ -60,6 +60,10 @@ const issueBody = `
 
 符号约定以后续版本为准。
 
+### 媒体平台转发偏好
+
+允许转发并保留署名
+
 ### 授权确认
 
 - [x] 我确认对原创投稿内容拥有相应权利并同意以 CC BY-SA 4.0 发布；第三方内容已标明作者、来源和许可或使用依据。
@@ -73,6 +77,7 @@ const output = renderSubmission(template, submission.replacements)
 assert.match(output, /title: "电磁学"/)
 assert.match(output, /license: CC-BY-SA-4\.0/)
 assert.match(output, /tags: \["物理","电磁学","theory"\]/)
+assert.match(output, /media_repost_preference: attributed/)
 assert.match(output, /<p class="article-byline"><span>作者：<\/span>测试贡献者<\/p>/)
 assert.match(output, /## 页面定位/)
 assert.match(output, /## 主要内容/)
@@ -86,6 +91,21 @@ const anonymousSubmission = prepareSubmission({ body: anonymousBody, issueNumber
 const anonymousOutput = renderSubmission(template, anonymousSubmission.replacements)
 assert.match(anonymousOutput, /authors: \["@tester"\]/)
 assert.match(anonymousOutput, /<p class="article-byline"><span>作者：<\/span>@tester<\/p>/)
+
+for (const [label, value] of [
+  ['不允许原野象群媒体账号转发', 'declined'],
+  ['允许转发且无需署名', 'anonymous']
+]) {
+  const variantBody = issueBody.replace('允许转发并保留署名', label)
+  const variant = prepareSubmission({ body: variantBody, issueNumber: '46', issueAuthor: 'tester' })
+  const variantOutput = renderSubmission(template, variant.replacements)
+  assert.match(variantOutput, new RegExp(`media_repost_preference: ${value}`))
+}
+
+assert.throws(
+  () => prepareSubmission({ body: issueBody.replace('允许转发并保留署名', '未知选项'), issueNumber: '45', issueAuthor: 'tester' }),
+  /未知媒体平台转发偏好/
+)
 
 assert.throws(
   () => prepareSubmission({ body: issueBody.replace('从库仑定律', '<script>bad()</script>'), issueNumber: '43', issueAuthor: 'tester' }),
