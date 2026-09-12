@@ -13,7 +13,9 @@ draft: false
 
 # {{TITLE}}
 
-## {{POSITION_HEADING}}
+<p class="article-byline"><span>作者：</span>{{AUTHOR_HTML}}</p>
+
+## 页面定位
 
 {{POSITIONING}}
 
@@ -23,7 +25,7 @@ draft: false
 
 {{GOALS}}
 
-## {{CONTENT_HEADING}}
+## 主要内容
 
 {{MAIN_CONTENT}}
 

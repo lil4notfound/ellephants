@@ -303,6 +303,25 @@ body {
   border-left-color: var(--vp-c-brand-1);
 }
 
+.article-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
+  align-items: baseline;
+  margin: 14px 0 0 !important;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  line-height: 1.6 !important;
+}
+
+.article-byline span {
+  color: var(--vp-c-brand-1);
+  font-family: var(--vp-font-family-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
 .directory-contents {
   border-top: 2px solid var(--vp-c-text-1);
 }

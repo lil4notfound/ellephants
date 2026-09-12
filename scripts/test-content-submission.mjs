@@ -73,9 +73,19 @@ const output = renderSubmission(template, submission.replacements)
 assert.match(output, /title: "电磁学"/)
 assert.match(output, /license: CC-BY-SA-4\.0/)
 assert.match(output, /tags: \["物理","电磁学","theory"\]/)
+assert.match(output, /<p class="article-byline"><span>作者：<\/span>测试贡献者<\/p>/)
+assert.match(output, /## 页面定位/)
+assert.match(output, /## 主要内容/)
+assert.match(output, /## 资料链接/)
 assert.match(output, /### 静电场/)
 assert.match(output, /\[示例讲义\]\(https:\/\/example\.com\/notes\.pdf\)/)
 assert.doesNotMatch(output, /\{\{[A-Z_]+\}\}/)
+
+const anonymousBody = issueBody.replace('\n测试贡献者\n\n### 先修知识', '\n\n### 先修知识')
+const anonymousSubmission = prepareSubmission({ body: anonymousBody, issueNumber: '44', issueAuthor: 'tester' })
+const anonymousOutput = renderSubmission(template, anonymousSubmission.replacements)
+assert.match(anonymousOutput, /authors: \["@tester"\]/)
+assert.match(anonymousOutput, /<p class="article-byline"><span>作者：<\/span>@tester<\/p>/)
 
 assert.throws(
   () => prepareSubmission({ body: issueBody.replace('从库仑定律', '<script>bad()</script>'), issueNumber: '43', issueAuthor: 'tester' }),

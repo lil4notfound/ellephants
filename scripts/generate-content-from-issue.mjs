@@ -99,6 +99,15 @@ function escapeTableCell(value) {
   return value.replace(/\|/g, '\\|').replace(/\r?\n/g, ' ').trim()
 }
 
+function escapeHtml(value) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 function resourceTable(value) {
   const lines = linesFrom(value)
   if (lines.length === 0) return ''
@@ -113,7 +122,7 @@ function resourceTable(value) {
   })
 
   return [
-    '## 资料与使用建议',
+    '## 资料链接',
     '',
     '| 资料 | 类型和大小 | 来源与授权 | 使用说明 |',
     '| --- | --- | --- | --- |',
@@ -162,8 +171,6 @@ export function prepareSubmission({ body, issueNumber, issueAuthor }) {
   const resourcesSection = resourceTable(fields.get('资料链接'))
   const notesSection = optionalSection('补充说明', fields.get('补充说明') || '')
   const prerequisitesSection = optionalSection('先修知识', fields.get('先修知识') || '', bulletList)
-  const positionHeading = type === 'course' ? '课程定位' : '内容概述'
-  const contentHeading = type === 'course' ? '内容地图' : '正文'
 
   return {
     directory: target.directory,
@@ -177,11 +184,10 @@ export function prepareSubmission({ body, issueNumber, issueAuthor }) {
       '{{TAGS_YAML}}': JSON.stringify(tags),
       '{{PREREQUISITES_YAML}}': JSON.stringify(prerequisites),
       '{{TITLE}}': title,
-      '{{POSITION_HEADING}}': positionHeading,
+      '{{AUTHOR_HTML}}': escapeHtml(author),
       '{{POSITIONING}}': positioning,
       '{{PREREQUISITES_SECTION}}': prerequisitesSection,
       '{{GOALS}}': bulletList(goals),
-      '{{CONTENT_HEADING}}': contentHeading,
       '{{MAIN_CONTENT}}': mainContent,
       '{{RESOURCES_SECTION}}': resourcesSection,
       '{{NOTES_SECTION}}': notesSection
