@@ -8,7 +8,7 @@ status: review
 
 # 几何与拓扑
 
-本目录关注空间的几何结构、连续性质和局部到整体的关系。
+几何与拓扑刻画空间的形状、连续性质，以及局部信息与整体结构之间的联系。
 
 ## 内容
 
@@ -20,4 +20,4 @@ status: review
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="math.geometry-topology" />

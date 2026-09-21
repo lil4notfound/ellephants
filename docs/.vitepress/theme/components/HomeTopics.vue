@@ -14,8 +14,13 @@ const entries = [
   },
   {
     index: '03',
-    title: '内容规范',
-    link: '/guide/writing'
+    title: '处境',
+    link: '/situation/'
+  },
+  {
+    index: '04',
+    title: '毛茸茸',
+    link: '/furry/'
   }
 ]
 </script>

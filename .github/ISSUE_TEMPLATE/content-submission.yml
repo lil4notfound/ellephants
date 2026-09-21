@@ -1,43 +1,81 @@
-name: 提交知识内容
-description: 通过结构化表单提交课程或专题内容
-title: "[内容投稿] "
+name: 提交原创内容
+description: 分享文章、教程、笔记、经验或创作
+title: "[原创投稿] "
+labels: []
 body:
   - type: markdown
     attributes:
       value: |
-        请按字段填写内容。页面目录、文件名、格式和标签将由系统生成。
+        请选择内容最主要的归属。跨领域主题可以在“次要领域”和“主题词”中补充。
 
   - type: dropdown
-    id: target
+    id: domain
     attributes:
-      label: 目标领域
-      # content-areas:start
+      label: 领域
+      # taxonomy-domains:start
       options:
-        - "数学 / 分析与微分方程"
-        - "数学 / 代数与数论"
-        - "数学 / 几何与拓扑"
-        - "数学 / 概率统计与随机过程"
-        - "数学 / 应用数学与建模"
-        - "物理 / 普通物理与物理思想"
-        - "物理 / 力学"
-        - "物理 / 热学与统计物理"
-        - "物理 / 电磁学与电动力学"
-        - "物理 / 光学"
-        - "物理 / 量子、原子与近代物理"
-        - "物理 / 凝聚态物理"
-        - "物理 / 数学物理方法"
-        - "物理 / 实验物理"
-      # content-areas:end
+        - "数学"
+        - "物理"
+        - "处境"
+        - "毛茸茸"
+      # taxonomy-domains:end
     validations:
       required: true
 
   - type: dropdown
-    id: page-type
+    id: branch
     attributes:
-      label: 页面类型
+      label: 主分支
+      description: 仅数学和物理需要选择；处境和毛茸茸请留空。
+      # taxonomy-branches:start
       options:
-        - 课程页
-        - 专题文章
+        - "数学 / 基础、逻辑与数学文化"
+        - "数学 / 组合、图论与离散结构"
+        - "数学 / 代数与数论"
+        - "数学 / 分析、方程与动力系统"
+        - "数学 / 几何与拓扑"
+        - "数学 / 概率、统计与随机过程"
+        - "数学 / 计算数学与数值方法"
+        - "数学 / 优化、运筹、控制与数学建模"
+        - "物理 / 基础、测量与物理教育"
+        - "物理 / 力学、流体与非线性动力学"
+        - "物理 / 热力学、统计物理与复杂系统"
+        - "物理 / 电磁学与电动力学"
+        - "物理 / 光学与光子学"
+        - "物理 / 原子、分子与量子科学"
+        - "物理 / 凝聚态、材料与软物质"
+        - "物理 / 等离子体、束流与加速器"
+        - "物理 / 核物理、粒子与场"
+        - "物理 / 引力、天体物理与宇宙学"
+        - "物理 / 交叉学科"
+      # taxonomy-branches:end
+    validations:
+      required: false
+
+  - type: textarea
+    id: topics
+    attributes:
+      label: 主题词
+      description: 每行填写一个概括内容的主题词；没有合适说法时可以直接填写自己的用词。
+      placeholder: |
+        量子力学
+        线性代数
+    validations:
+      required: true
+
+  - type: dropdown
+    id: secondary-domains
+    attributes:
+      label: 次要领域
+      description: 可选；只有内容确实跨领域时才选择。
+      multiple: true
+      options: [数学, 物理, 处境, 毛茸茸]
+
+  - type: dropdown
+    id: content-type
+    attributes:
+      label: 内容形式
+      options: [文章, 教程或课程, 笔记, 经验与方法, 创作]
     validations:
       required: true
 
@@ -45,7 +83,7 @@ body:
     id: page-title
     attributes:
       label: 页面标题
-      placeholder: 例如：数学分析
+      placeholder: 例如：从图论看城市交通网络
     validations:
       required: true
 
@@ -53,19 +91,7 @@ body:
     id: description
     attributes:
       label: 页面简介
-      description: 用一至两句话说明页面范围。
-    validations:
-      required: true
-
-  - type: dropdown
-    id: content-kind
-    attributes:
-      label: 内容属性
-      options:
-        - 理论
-        - 实验
-        - 方法
-        - 综合
+      description: 用一至两句话说明内容范围。
     validations:
       required: true
 
@@ -84,18 +110,14 @@ body:
   - type: textarea
     id: positioning
     attributes:
-      label: 页面定位
-      description: 说明研究对象、适用读者和内容边界。
-    validations:
-      required: true
+      label: 内容范围
+      description: 可选；说明适合谁阅读，以及本文不准备讨论什么。
 
   - type: textarea
     id: goals
     attributes:
-      label: 学习目标
-      description: 每行填写一项可验证的学习目标。
-    validations:
-      required: true
+      label: 阅读收获
+      description: 可选；每行填写一项读者可以理解或完成的事情。
 
   - type: textarea
     id: main-content
@@ -113,16 +135,23 @@ body:
       placeholder: 数学分析讲义 | https://example.com/notes.pdf | PDF / 12 MB | 作者公开 | 适合入门
 
   - type: textarea
+    id: attachments
+    attributes:
+      label: 附件
+      description: 可选；把文件拖入输入框上传。页面会显示原文件名。单个文件不超过 25 MB，最多 5 个。
+      placeholder: 将文件拖到这里，GitHub 会自动插入附件链接。
+
+  - type: textarea
     id: notes
     attributes:
       label: 补充说明
-      description: 可选；填写常见问题、版本差异或维护信息。
+      description: 可选；填写版本差异、维护说明或其他补充信息。
 
   - type: dropdown
     id: media-repost
     attributes:
       label: 媒体平台转发偏好
-      description: 本项只用于原野象群自有媒体账号的运营安排，不改变页面内容采用的 CC BY-SA 4.0 许可。
+      description: 本项只用于原野象群自有媒体账号，不改变页面内容的许可。
       options:
         - 不允许原野象群媒体账号转发
         - 允许转发并保留署名
@@ -135,5 +164,5 @@ body:
     attributes:
       label: 授权确认
       options:
-        - label: 我确认对原创投稿内容拥有相应权利并同意以 CC BY-SA 4.0 发布；第三方内容已标明作者、来源和许可或使用依据。
+        - label: 我确认对原创内容和上传附件拥有相应权利，并同意以 CC BY-SA 4.0 发布；引用内容已经标明来源。
           required: true

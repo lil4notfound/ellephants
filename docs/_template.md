@@ -5,10 +5,20 @@ order: {{ORDER}}
 type: {{TYPE}}
 status: published
 license: CC-BY-SA-4.0
+content_id: {{CONTENT_ID_YAML}}
+origin: {{ORIGIN}}
+domain_id: {{DOMAIN_ID}}
+branch_id: {{BRANCH_ID_YAML}}
+topic_ids: {{TOPIC_IDS_YAML}}
+secondary_domain_ids: {{SECONDARY_DOMAIN_IDS_YAML}}
+keywords: {{KEYWORDS_YAML}}
+content_type: {{CONTENT_TYPE}}
+# {{RESOURCE_FRONTMATTER}}
 authors: {{AUTHOR_YAML}}
 tags: {{TAGS_YAML}}
 prerequisites: {{PREREQUISITES_YAML}}
 media_repost_preference: {{MEDIA_REPOST_PREFERENCE}}
+attachments: {{ATTACHMENTS_YAML}}
 draft: false
 ---
 
@@ -16,19 +26,17 @@ draft: false
 
 <p class="article-byline"><span>作者：</span>{{AUTHOR_HTML}}</p>
 
-## 页面定位
-
-{{POSITIONING}}
+{{POSITIONING_SECTION}}
 
 {{PREREQUISITES_SECTION}}
 
-## 学习目标
+{{GOALS_SECTION}}
 
-{{GOALS}}
+{{RESOURCE_DETAILS_SECTION}}
 
-## 主要内容
+{{MAIN_CONTENT_SECTION}}
 
-{{MAIN_CONTENT}}
+{{ATTACHMENTS_SECTION}}
 
 {{RESOURCES_SECTION}}
 

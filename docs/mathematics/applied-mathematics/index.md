@@ -1,19 +1,23 @@
 ---
-title: 应用数学与建模
-description: 使用数学语言描述实际系统、建立模型并解释结果的课程入口。
+title: 优化、运筹、控制与数学建模
+description: 用数学模型支持求解、控制、决策与现实问题解释的领域入口。
 order: 50
 type: index
 status: review
 ---
 
-# 应用数学与建模
+# 优化、运筹、控制与数学建模
 
-本目录用于连接多个数学领域与实际问题，重点记录建模过程、假设、求解方法和结果解释。
+优化、运筹、控制与博弈为现实问题提供建模、求解、决策和结果解释的方法。
 
 ## 内容
 
-1. 数学模型
+1. 最优化与凸分析
+2. 运筹与决策
+3. 控制理论
+4. 博弈论
+5. 数学建模
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="math.optimization-modeling" />

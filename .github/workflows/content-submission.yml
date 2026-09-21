@@ -12,7 +12,7 @@ jobs:
   validate:
     if: >-
       (github.event.action == 'opened' || github.event.action == 'edited') &&
-      contains(github.event.issue.body, '### 目标领域') &&
+      (contains(github.event.issue.body, '### 目标领域') || contains(github.event.issue.body, '### 领域')) &&
       !contains(github.event.issue.labels.*.name, 'content-published')
     runs-on: ubuntu-latest
     permissions:
@@ -114,17 +114,34 @@ jobs:
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
         run: node scripts/generate-content-from-issue.mjs
 
+      - name: Mark new topic suggestions
+        if: steps.generate.outputs.taxonomy_candidates != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          gh label create taxonomy-candidate --color C89B5A --description "包含尚未收录的主题词" --force
+          gh issue edit "$ISSUE_URL" --add-label taxonomy-candidate
+
+      - name: Refresh navigation data
+        run: npm run sync:graph
+
       - name: Validate and build
         run: npm run build
 
       - name: Commit generated page
         env:
           CONTENT_PATH: ${{ steps.generate.outputs.content_path }}
+          ATTACHMENT_DIRECTORY: ${{ steps.generate.outputs.attachment_directory }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
           git config user.name "ellephants content bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- "$CONTENT_PATH"
+          git add -- docs/public/data
+          if [ -n "$ATTACHMENT_DIRECTORY" ]; then
+            git add -- "$ATTACHMENT_DIRECTORY"
+          fi
           git commit -m "content: publish issue #$ISSUE_NUMBER"
           git pull --rebase origin main
           npm run build

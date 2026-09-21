@@ -1,14 +1,14 @@
 ---
-title: 概率统计与随机过程
+title: 概率、统计与随机过程
 description: 随机现象、统计推断和随时间演化的随机系统相关课程入口。
 order: 40
 type: index
 status: review
 ---
 
-# 概率统计与随机过程
+# 概率、统计与随机过程
 
-本目录组织概率基础、从数据进行推断的方法，以及随机过程模型。
+概率描述不确定性，统计从数据中进行推断，随机过程刻画随时间演化的随机现象。
 
 ## 内容
 
@@ -18,4 +18,4 @@ status: review
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="math.probability-statistics" />

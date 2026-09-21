@@ -1,14 +1,14 @@
 ---
-title: 普通物理与物理思想
-description: 普通物理的整体框架，以及贯穿各物理领域的建模、近似和守恒思想。
+title: 基础、测量与物理教育
+description: 物理思想、量纲与估算、测量方法、守恒思想和物理教育。
 order: 10
 type: index
 status: review
 ---
 
-# 普通物理与物理思想
+# 基础、测量与物理教育
 
-本目录用于建立物理学的整体图景，并整理能够跨越不同领域使用的基本思想与分析方式。具体领域知识分别进入力学、热学、电磁学、光学等目录。
+量纲、测量、建模、近似、对称性与守恒量，共同构成理解物理问题的基本方法。
 
 ## 内容
 
@@ -20,4 +20,4 @@ status: review
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="physics.foundations" />

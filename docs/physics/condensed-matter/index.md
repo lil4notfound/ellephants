@@ -1,14 +1,14 @@
 ---
-title: 凝聚态物理
-description: 固体结构、物性及多体系统宏观行为相关内容的领域入口。
+title: 凝聚态、材料与软物质
+description: 固体、材料、介观系统、聚合物和软物质相关内容的领域入口。
 order: 70
 type: index
 status: review
 ---
 
-# 凝聚态物理
+# 凝聚态、材料与软物质
 
-本目录研究大量粒子组成的凝聚态系统如何形成结构，并表现出宏观电学、磁学、热学和光学性质。
+凝聚态物理研究大量粒子形成的结构，以及材料由此表现出的电学、磁学、热学与光学性质。
 
 ## 内容
 
@@ -21,4 +21,4 @@ status: review
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="physics.condensed-materials" />

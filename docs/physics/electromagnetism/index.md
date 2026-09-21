@@ -1,6 +1,6 @@
 ---
 title: 电磁学与电动力学
-description: 电场、磁场、电磁波以及经典场论描述相关内容的领域入口。
+description: 电荷、电流、电磁场、电磁波与辐射相关内容的领域入口。
 order: 40
 type: index
 status: review
@@ -8,7 +8,7 @@ status: review
 
 # 电磁学与电动力学
 
-本目录研究电荷、电流与电磁场的相互作用，以及电磁场的统一描述、传播和辐射。
+电磁学描述电荷、电流与电磁场的相互作用，电动力学进一步讨论电磁波、辐射和相对论性效应。
 
 ## 内容
 
@@ -21,4 +21,4 @@ status: review
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="physics.electromagnetism-electrodynamics" />

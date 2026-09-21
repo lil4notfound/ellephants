@@ -1,0 +1,177 @@
+name: 提交资源导览
+description: 推荐书籍、论文、网站、软件或其他外部资源
+title: "[资源投稿] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请说明这份资源为什么值得阅读或使用，并提供清楚的来源与权利信息。
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: 领域
+      # taxonomy-domains:start
+      options:
+        - "数学"
+        - "物理"
+        - "处境"
+        - "毛茸茸"
+      # taxonomy-domains:end
+    validations:
+      required: true
+
+  - type: dropdown
+    id: branch
+    attributes:
+      label: 主分支
+      description: 仅数学和物理需要选择；处境和毛茸茸请留空。
+      # taxonomy-branches:start
+      options:
+        - "数学 / 基础、逻辑与数学文化"
+        - "数学 / 组合、图论与离散结构"
+        - "数学 / 代数与数论"
+        - "数学 / 分析、方程与动力系统"
+        - "数学 / 几何与拓扑"
+        - "数学 / 概率、统计与随机过程"
+        - "数学 / 计算数学与数值方法"
+        - "数学 / 优化、运筹、控制与数学建模"
+        - "物理 / 基础、测量与物理教育"
+        - "物理 / 力学、流体与非线性动力学"
+        - "物理 / 热力学、统计物理与复杂系统"
+        - "物理 / 电磁学与电动力学"
+        - "物理 / 光学与光子学"
+        - "物理 / 原子、分子与量子科学"
+        - "物理 / 凝聚态、材料与软物质"
+        - "物理 / 等离子体、束流与加速器"
+        - "物理 / 核物理、粒子与场"
+        - "物理 / 引力、天体物理与宇宙学"
+        - "物理 / 交叉学科"
+      # taxonomy-branches:end
+    validations:
+      required: false
+
+  - type: textarea
+    id: topics
+    attributes:
+      label: 主题词
+      description: 每行填写一个概括资源内容的主题词；没有合适说法时可以直接填写自己的用词。
+    validations:
+      required: true
+
+  - type: dropdown
+    id: secondary-domains
+    attributes:
+      label: 次要领域
+      description: 可选；只有资源确实跨领域时才选择。
+      multiple: true
+      options: [数学, 物理, 处境, 毛茸茸]
+
+  - type: dropdown
+    id: resource-type
+    attributes:
+      label: 资源类型
+      options: [书籍, 论文, 网站, 软件或工具, 视频或音频, 数据集, 其他资源]
+    validations:
+      required: true
+
+  - type: input
+    id: page-title
+    attributes:
+      label: 页面标题
+      description: 使用资源的通行名称，必要时补充版本。
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: 页面简介
+      description: 用一至两句话说明资源内容和适用人群。
+    validations:
+      required: true
+
+  - type: input
+    id: resource-creators
+    attributes:
+      label: 资源作者或机构
+    validations:
+      required: true
+
+  - type: input
+    id: source-url
+    attributes:
+      label: 来源地址
+      description: 填写作者、出版社、项目或资源的原始页面。
+    validations:
+      required: true
+
+  - type: input
+    id: access-method
+    attributes:
+      label: 访问方式
+      placeholder: 例如：免费在线阅读；学校图书馆可访问；开源下载
+    validations:
+      required: true
+
+  - type: textarea
+    id: rights-basis
+    attributes:
+      label: 版权或使用依据
+      description: 说明许可证、公开授权、链接推荐依据，或你拥有的分发权利。
+    validations:
+      required: true
+
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: 推荐说明
+      description: 说明推荐理由、内容特点、阅读门槛和需要注意的局限。
+    validations:
+      required: true
+
+  - type: input
+    id: attribution
+    attributes:
+      label: 导览署名
+      description: 可选；留空时使用提交者的 GitHub 用户名。
+
+  - type: textarea
+    id: prerequisites
+    attributes:
+      label: 先修知识
+      description: 可选；每行填写一项。
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: 附件
+      description: 只有在你确认本站可以分发文件时才上传。把文件拖入输入框；单个文件不超过 25 MB，最多 5 个。
+      placeholder: 将文件拖到这里，GitHub 会自动插入附件链接。
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充说明
+      description: 可选；填写版本、语言、失效备份或其他补充信息。
+
+  - type: dropdown
+    id: media-repost
+    attributes:
+      label: 媒体平台转发偏好
+      description: 本项只针对你撰写的推荐说明，不改变第三方资源的权利状态。
+      options:
+        - 不允许原野象群媒体账号转发
+        - 允许转发并保留署名
+        - 允许转发且无需署名
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: 授权确认
+      options:
+        - label: 我确认推荐说明可以以 CC BY-SA 4.0 发布；资源来源和权利信息真实，上传附件具有分发依据。
+          required: true

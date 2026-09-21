@@ -5,6 +5,15 @@ order: 1001
 type: course
 status: published
 license: CC-BY-SA-4.0
+content_id: contribution-1
+origin: resource
+domain_id: physics
+branch_id: physics.atomic-quantum
+topic_ids: [physics.quantum-mechanics]
+secondary_domain_ids: [mathematics]
+keywords: []
+content_type: book
+resource_type: book
 authors: ["@2300012558"]
 tags: ["物理","量子与近代物理","theory"]
 prerequisites: ["力学","电磁学","高等数学","线性代数"]

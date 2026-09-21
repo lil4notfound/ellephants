@@ -1,0 +1,33 @@
+{
+  "mathematics": {
+    "scheme": "MSC2020",
+    "expectedTopLevelCodes": ["00", "01", "03", "05", "06", "08", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "22", "26", "28", "30", "31", "32", "33", "34", "35", "37", "39", "40", "41", "42", "43", "44", "45", "46", "47", "49", "51", "52", "53", "54", "55", "57", "58", "60", "62", "65", "68", "70", "74", "76", "78", "80", "81", "82", "83", "85", "86", "90", "91", "92", "93", "94", "97"],
+    "branches": {
+      "math.foundations": ["00", "01", "03", "97"],
+      "math.discrete": ["05", "06", "68"],
+      "math.algebra-number": ["08", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
+      "math.analysis-equations": ["22", "26", "28", "30", "31", "32", "33", "34", "35", "37", "39", "40", "41", "42", "43", "44", "45", "46", "47", "49"],
+      "math.geometry-topology": ["51", "52", "53", "54", "55", "57", "58"],
+      "math.probability-statistics": ["60", "62"],
+      "math.computational": ["65"],
+      "math.optimization-modeling": ["70", "74", "76", "78", "80", "81", "82", "83", "85", "86", "90", "91", "92", "93", "94"]
+    }
+  },
+  "physics": {
+    "scheme": "PhySH",
+    "expectedDisciplines": ["Accelerators & Beams", "Atomic, Molecular & Optical", "Condensed Matter, Materials & Applied Physics", "Energy Science & Technology", "Fluid Dynamics", "Gravitation, Cosmology & Astrophysics", "Interdisciplinary Physics", "Networks", "Nonlinear Dynamics", "Nuclear Physics", "Particles & Fields", "Physics Education Research", "Physics of Living Systems", "Plasma Physics", "Polymers & Soft Matter", "Quantum Information, Science & Technology", "Statistical Physics & Thermodynamics"],
+    "branches": {
+      "physics.foundations": ["Physics Education Research"],
+      "physics.mechanics-fluids": ["Fluid Dynamics", "Nonlinear Dynamics"],
+      "physics.thermal-complex": ["Networks", "Statistical Physics & Thermodynamics"],
+      "physics.electromagnetism-electrodynamics": [],
+      "physics.optics-photonics": [],
+      "physics.atomic-quantum": ["Atomic, Molecular & Optical", "Quantum Information, Science & Technology"],
+      "physics.condensed-materials": ["Condensed Matter, Materials & Applied Physics", "Polymers & Soft Matter"],
+      "physics.plasma-beams": ["Accelerators & Beams", "Plasma Physics"],
+      "physics.nuclear-particles": ["Nuclear Physics", "Particles & Fields"],
+      "physics.gravity-cosmos": ["Gravitation, Cosmology & Astrophysics"],
+      "physics.interdisciplinary": ["Energy Science & Technology", "Interdisciplinary Physics", "Physics of Living Systems"]
+    }
+  }
+}

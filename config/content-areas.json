@@ -1,72 +1,210 @@
 [
   {
-    "label": "数学 / 分析与微分方程",
-    "directory": "docs/mathematics/analysis-equations",
-    "tags": ["数学", "分析"]
+    "label": "数学 / 基础、逻辑与数学文化",
+    "directory": "docs/mathematics/foundations-logic",
+    "tags": [
+      "数学",
+      "基础、逻辑与数学文化"
+    ],
+    "domainId": "mathematics",
+    "branchId": "math.foundations"
+  },
+  {
+    "label": "数学 / 组合、图论与离散结构",
+    "directory": "docs/mathematics/discrete-combinatorics",
+    "tags": [
+      "数学",
+      "组合、图论与离散结构"
+    ],
+    "domainId": "mathematics",
+    "branchId": "math.discrete"
   },
   {
     "label": "数学 / 代数与数论",
     "directory": "docs/mathematics/algebra-number-theory",
-    "tags": ["数学", "代数与数论"]
+    "tags": [
+      "数学",
+      "代数与数论"
+    ],
+    "domainId": "mathematics",
+    "branchId": "math.algebra-number"
+  },
+  {
+    "label": "数学 / 分析、方程与动力系统",
+    "directory": "docs/mathematics/analysis-equations",
+    "tags": [
+      "数学",
+      "分析、方程与动力系统"
+    ],
+    "domainId": "mathematics",
+    "branchId": "math.analysis-equations"
   },
   {
     "label": "数学 / 几何与拓扑",
     "directory": "docs/mathematics/geometry-topology",
-    "tags": ["数学", "几何与拓扑"]
+    "tags": [
+      "数学",
+      "几何与拓扑"
+    ],
+    "domainId": "mathematics",
+    "branchId": "math.geometry-topology"
   },
   {
-    "label": "数学 / 概率统计与随机过程",
+    "label": "数学 / 概率、统计与随机过程",
     "directory": "docs/mathematics/probability-statistics",
-    "tags": ["数学", "概率统计"]
+    "tags": [
+      "数学",
+      "概率、统计与随机过程"
+    ],
+    "domainId": "mathematics",
+    "branchId": "math.probability-statistics"
   },
   {
-    "label": "数学 / 应用数学与建模",
+    "label": "数学 / 计算数学与数值方法",
+    "directory": "docs/mathematics/computational-numerical",
+    "tags": [
+      "数学",
+      "计算数学与数值方法"
+    ],
+    "domainId": "mathematics",
+    "branchId": "math.computational"
+  },
+  {
+    "label": "数学 / 优化、运筹、控制与数学建模",
     "directory": "docs/mathematics/applied-mathematics",
-    "tags": ["数学", "应用数学"]
+    "tags": [
+      "数学",
+      "优化、运筹、控制与数学建模"
+    ],
+    "domainId": "mathematics",
+    "branchId": "math.optimization-modeling"
   },
   {
-    "label": "物理 / 普通物理与物理思想",
+    "label": "物理 / 基础、测量与物理教育",
     "directory": "docs/physics/general-physics",
-    "tags": ["物理", "普通物理"]
+    "tags": [
+      "物理",
+      "基础、测量与物理教育"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.foundations"
   },
   {
-    "label": "物理 / 力学",
+    "label": "物理 / 力学、流体与非线性动力学",
     "directory": "docs/physics/mechanics",
-    "tags": ["物理", "力学"]
+    "tags": [
+      "物理",
+      "力学、流体与非线性动力学"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.mechanics-fluids"
   },
   {
-    "label": "物理 / 热学与统计物理",
+    "label": "物理 / 热力学、统计物理与复杂系统",
     "directory": "docs/physics/thermal-statistical",
-    "tags": ["物理", "热学与统计物理"]
+    "tags": [
+      "物理",
+      "热力学、统计物理与复杂系统"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.thermal-complex"
   },
   {
     "label": "物理 / 电磁学与电动力学",
     "directory": "docs/physics/electromagnetism",
-    "tags": ["物理", "电磁学"]
+    "tags": [
+      "物理",
+      "电磁学与电动力学"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.electromagnetism-electrodynamics"
   },
   {
-    "label": "物理 / 光学",
-    "directory": "docs/physics/optics",
-    "tags": ["物理", "光学"]
+    "label": "物理 / 光学与光子学",
+    "directory": "docs/physics/optics-photonics",
+    "tags": [
+      "物理",
+      "光学与光子学"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.optics-photonics"
   },
   {
-    "label": "物理 / 量子、原子与近代物理",
+    "label": "物理 / 原子、分子与量子科学",
     "directory": "docs/physics/quantum-modern",
-    "tags": ["物理", "量子与近代物理"]
+    "tags": [
+      "物理",
+      "原子、分子与量子科学"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.atomic-quantum"
   },
   {
-    "label": "物理 / 凝聚态物理",
+    "label": "物理 / 凝聚态、材料与软物质",
     "directory": "docs/physics/condensed-matter",
-    "tags": ["物理", "凝聚态物理"]
+    "tags": [
+      "物理",
+      "凝聚态、材料与软物质"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.condensed-materials"
   },
   {
-    "label": "物理 / 数学物理方法",
-    "directory": "docs/physics/mathematical-methods",
-    "tags": ["物理", "数学物理方法"]
+    "label": "物理 / 等离子体、束流与加速器",
+    "directory": "docs/physics/plasma-beams",
+    "tags": [
+      "物理",
+      "等离子体、束流与加速器"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.plasma-beams"
   },
   {
-    "label": "物理 / 实验物理",
-    "directory": "docs/physics/experiments",
-    "tags": ["物理", "实验物理"]
+    "label": "物理 / 核物理、粒子与场",
+    "directory": "docs/physics/nuclear-particles",
+    "tags": [
+      "物理",
+      "核物理、粒子与场"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.nuclear-particles"
+  },
+  {
+    "label": "物理 / 引力、天体物理与宇宙学",
+    "directory": "docs/physics/gravity-cosmos",
+    "tags": [
+      "物理",
+      "引力、天体物理与宇宙学"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.gravity-cosmos"
+  },
+  {
+    "label": "物理 / 交叉学科",
+    "directory": "docs/physics/interdisciplinary",
+    "tags": [
+      "物理",
+      "交叉学科"
+    ],
+    "domainId": "physics",
+    "branchId": "physics.interdisciplinary"
+  },
+  {
+    "label": "处境",
+    "directory": "docs/situation",
+    "tags": [
+      "处境"
+    ],
+    "domainId": "situation",
+    "branchId": ""
+  },
+  {
+    "label": "毛茸茸",
+    "directory": "docs/furry",
+    "tags": [
+      "毛茸茸"
+    ],
+    "domainId": "furry",
+    "branchId": ""
   }
 ]

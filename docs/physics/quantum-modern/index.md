@@ -1,14 +1,14 @@
 ---
-title: 量子、原子与近代物理
-description: 原子尺度现象、量子理论和近代物理基础相关内容的领域入口。
+title: 原子、分子与量子科学
+description: 量子理论、原子分子结构、光谱和量子信息相关内容的领域入口。
 order: 60
 type: index
 status: review
 ---
 
-# 量子、原子与近代物理
+# 原子、分子与量子科学
 
-本目录研究经典物理无法完整描述的微观与高速现象，并建立原子结构和量子理论的系统框架。
+量子理论描述经典物理难以完整解释的微观现象，并连接原子结构、分子行为与量子信息。
 
 ## 内容
 
@@ -21,4 +21,4 @@ status: review
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="physics.atomic-quantum" />

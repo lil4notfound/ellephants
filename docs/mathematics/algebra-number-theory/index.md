@@ -8,7 +8,7 @@ status: review
 
 # 代数与数论
 
-本目录从向量空间和线性变换延伸到群、环、域与数论问题。
+代数研究运算、对称性与抽象结构，数论关注整数及其规律，两者在许多问题中彼此交织。
 
 ## 内容
 
@@ -18,4 +18,4 @@ status: review
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="math.algebra-number" />

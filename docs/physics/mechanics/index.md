@@ -1,14 +1,14 @@
 ---
-title: 力学
-description: 描述物体运动、相互作用和经典动力系统的物理领域入口。
+title: 力学、流体与非线性动力学
+description: 描述物体、连续介质和非线性系统运动的物理领域入口。
 order: 20
 type: index
 status: review
 ---
 
-# 力学
+# 力学、流体与非线性动力学
 
-本目录研究物体的运动、相互作用及动力系统的演化，并连接直观的运动描述与分析力学框架。
+力学描述物体的运动与相互作用，并延伸到连续介质、流体和非线性动力系统。
 
 ## 内容
 
@@ -21,4 +21,4 @@ status: review
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="physics.mechanics-fluids" />

@@ -1,14 +1,14 @@
 ---
-title: 热学与统计物理
-description: 宏观热现象、热力学规律和微观统计描述相关内容的领域入口。
+title: 热力学、统计物理与复杂系统
+description: 从热现象和微观统计到网络、相变与复杂系统的领域入口。
 order: 30
 type: index
 status: review
 ---
 
-# 热学与统计物理
+# 热力学、统计物理与复杂系统
 
-本目录研究宏观系统的热现象与能量转化，并从微观粒子的统计规律解释宏观性质。
+热力学描述宏观系统中的热现象与能量转化，统计物理解释微观规律如何形成宏观性质。
 
 ## 内容
 
@@ -21,4 +21,4 @@ status: review
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="physics.thermal-complex" />

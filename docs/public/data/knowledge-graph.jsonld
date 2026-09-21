@@ -1,0 +1,529 @@
+{
+  "@context": {
+    "@vocab": "urn:ellephants:schema:",
+    "id": "@id",
+    "type": "@type",
+    "label": "https://www.w3.org/2004/02/skos/core#prefLabel",
+    "description": "http://purl.org/dc/terms/description",
+    "url": {
+      "@id": "https://schema.org/url",
+      "@type": "@id"
+    },
+    "from": {
+      "@id": "urn:ellephants:schema:from",
+      "@type": "@id"
+    },
+    "to": {
+      "@id": "urn:ellephants:schema:to",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "id": "urn:ellephants:mathematics",
+      "kind": "domain",
+      "label": "数学",
+      "englishLabel": "Mathematics",
+      "slug": "mathematics",
+      "aliases": [
+        "数学学科"
+      ],
+      "description": "研究数量、结构、空间、变化与不确定性的语言和方法。",
+      "order": 10,
+      "route": "/mathematics/"
+    },
+    {
+      "id": "urn:ellephants:physics",
+      "kind": "domain",
+      "label": "物理",
+      "englishLabel": "Physics",
+      "slug": "physics",
+      "aliases": [
+        "物理学"
+      ],
+      "description": "从基本规律到复杂系统，理解物质、能量、时空与相互作用。",
+      "order": 20,
+      "route": "/physics/"
+    },
+    {
+      "id": "urn:ellephants:situation",
+      "kind": "domain",
+      "label": "处境",
+      "englishLabel": "Lived Experience",
+      "slug": "situation",
+      "aliases": [
+        "生存经验",
+        "处境与经验"
+      ],
+      "description": "关于学习、工作、技术社区与日常生活的具体经验和可复用方法。",
+      "order": 30,
+      "route": "/situation/"
+    },
+    {
+      "id": "urn:ellephants:furry",
+      "kind": "domain",
+      "label": "毛茸茸",
+      "englishLabel": "Furry & Imagination",
+      "slug": "furry",
+      "aliases": [
+        "科学创作",
+        "想象与创作"
+      ],
+      "description": "收录由数学、物理与科学想象启发的创作、推荐和世界观。",
+      "order": 40,
+      "route": "/furry/"
+    },
+    {
+      "id": "urn:ellephants:math.foundations",
+      "kind": "branch",
+      "label": "基础、逻辑与数学文化",
+      "englishLabel": "Foundations, Logic & Mathematical Culture",
+      "slug": "foundations-logic",
+      "aliases": [
+        "数学基础",
+        "数理逻辑与数学文化"
+      ],
+      "description": "数理逻辑、集合论、数学基础、数学史、哲学与教育。",
+      "primaryParentId": "mathematics",
+      "order": 10,
+      "route": "/mathematics/foundations-logic/"
+    },
+    {
+      "id": "urn:ellephants:math.discrete",
+      "kind": "branch",
+      "label": "组合、图论与离散结构",
+      "englishLabel": "Combinatorics, Graph Theory & Discrete Structures",
+      "slug": "discrete-combinatorics",
+      "aliases": [
+        "组合数学",
+        "离散数学"
+      ],
+      "description": "组合数学、图论、序与格、离散几何和离散算法。",
+      "primaryParentId": "mathematics",
+      "order": 20,
+      "route": "/mathematics/discrete-combinatorics/"
+    },
+    {
+      "id": "urn:ellephants:math.algebra-number",
+      "kind": "branch",
+      "label": "代数与数论",
+      "englishLabel": "Algebra & Number Theory",
+      "slug": "algebra-number-theory",
+      "aliases": [
+        "代数数论"
+      ],
+      "description": "线性结构、群环域、表示论以及整数与数论问题。",
+      "primaryParentId": "mathematics",
+      "order": 30,
+      "route": "/mathematics/algebra-number-theory/"
+    },
+    {
+      "id": "urn:ellephants:math.analysis-equations",
+      "kind": "branch",
+      "label": "分析、方程与动力系统",
+      "englishLabel": "Analysis, Equations & Dynamical Systems",
+      "slug": "analysis-equations",
+      "aliases": [
+        "分析与微分方程",
+        "数学分析"
+      ],
+      "description": "实复分析、泛函与调和分析、微分方程和动力系统。",
+      "primaryParentId": "mathematics",
+      "order": 40,
+      "route": "/mathematics/analysis-equations/"
+    },
+    {
+      "id": "urn:ellephants:math.geometry-topology",
+      "kind": "branch",
+      "label": "几何与拓扑",
+      "englishLabel": "Geometry & Topology",
+      "slug": "geometry-topology",
+      "aliases": [
+        "几何拓扑"
+      ],
+      "description": "几何结构、流形、连续性质以及局部与整体的关系。",
+      "primaryParentId": "mathematics",
+      "order": 50,
+      "route": "/mathematics/geometry-topology/"
+    },
+    {
+      "id": "urn:ellephants:math.probability-statistics",
+      "kind": "branch",
+      "label": "概率、统计与随机过程",
+      "englishLabel": "Probability, Statistics & Stochastic Processes",
+      "slug": "probability-statistics",
+      "aliases": [
+        "概率统计与随机过程",
+        "概率统计"
+      ],
+      "description": "概率论、统计推断、随机过程与随机分析。",
+      "primaryParentId": "mathematics",
+      "order": 60,
+      "route": "/mathematics/probability-statistics/"
+    },
+    {
+      "id": "urn:ellephants:math.computational",
+      "kind": "branch",
+      "label": "计算数学与数值方法",
+      "englishLabel": "Computational Mathematics & Numerical Methods",
+      "slug": "computational-numerical",
+      "aliases": [
+        "计算数学",
+        "数值方法"
+      ],
+      "description": "数值分析、科学计算、符号计算以及可靠的计算方法。",
+      "primaryParentId": "mathematics",
+      "order": 70,
+      "route": "/mathematics/computational-numerical/"
+    },
+    {
+      "id": "urn:ellephants:math.optimization-modeling",
+      "kind": "branch",
+      "label": "优化、运筹、控制与数学建模",
+      "englishLabel": "Optimization, Operations Research, Control & Modeling",
+      "slug": "applied-mathematics",
+      "aliases": [
+        "应用数学与建模",
+        "应用数学"
+      ],
+      "description": "优化、运筹、控制、博弈以及面向现实问题的数学建模。",
+      "primaryParentId": "mathematics",
+      "order": 80,
+      "route": "/mathematics/applied-mathematics/"
+    },
+    {
+      "id": "urn:ellephants:physics.foundations",
+      "kind": "branch",
+      "label": "基础、测量与物理教育",
+      "englishLabel": "Foundations, Measurement & Physics Education",
+      "slug": "general-physics",
+      "aliases": [
+        "普通物理与物理思想",
+        "物理基础"
+      ],
+      "description": "物理思想、量纲、测量、方法论、历史与教育。",
+      "primaryParentId": "physics",
+      "order": 10,
+      "route": "/physics/general-physics/"
+    },
+    {
+      "id": "urn:ellephants:physics.mechanics-fluids",
+      "kind": "branch",
+      "label": "力学、流体与非线性动力学",
+      "englishLabel": "Mechanics, Fluids & Nonlinear Dynamics",
+      "slug": "mechanics",
+      "aliases": [
+        "力学"
+      ],
+      "description": "经典力学、连续介质、声学、流体与非线性系统。",
+      "primaryParentId": "physics",
+      "order": 20,
+      "route": "/physics/mechanics/"
+    },
+    {
+      "id": "urn:ellephants:physics.thermal-complex",
+      "kind": "branch",
+      "label": "热力学、统计物理与复杂系统",
+      "englishLabel": "Thermodynamics, Statistical Physics & Complex Systems",
+      "slug": "thermal-statistical",
+      "aliases": [
+        "热学与统计物理",
+        "统计物理"
+      ],
+      "description": "热学、统计物理、网络、相变与复杂系统。",
+      "primaryParentId": "physics",
+      "order": 30,
+      "route": "/physics/thermal-statistical/"
+    },
+    {
+      "id": "urn:ellephants:physics.electromagnetism-electrodynamics",
+      "kind": "branch",
+      "label": "电磁学与电动力学",
+      "englishLabel": "Electromagnetism & Electrodynamics",
+      "slug": "electromagnetism",
+      "aliases": [
+        "电磁学"
+      ],
+      "description": "电荷、电流、电磁场、电磁波与辐射。",
+      "primaryParentId": "physics",
+      "order": 40,
+      "route": "/physics/electromagnetism/"
+    },
+    {
+      "id": "urn:ellephants:physics.optics-photonics",
+      "kind": "branch",
+      "label": "光学与光子学",
+      "englishLabel": "Optics & Photonics",
+      "slug": "optics-photonics",
+      "aliases": [
+        "光学",
+        "光子学"
+      ],
+      "description": "光的传播、成像、相干、激光与光子技术。",
+      "primaryParentId": "physics",
+      "order": 50,
+      "route": "/physics/optics-photonics/"
+    },
+    {
+      "id": "urn:ellephants:physics.atomic-quantum",
+      "kind": "branch",
+      "label": "原子、分子与量子科学",
+      "englishLabel": "Atomic, Molecular & Quantum Science",
+      "slug": "quantum-modern",
+      "aliases": [
+        "量子、原子与近代物理",
+        "量子与近代物理"
+      ],
+      "description": "量子力学、原子分子光物理与量子信息。",
+      "primaryParentId": "physics",
+      "order": 60,
+      "route": "/physics/quantum-modern/"
+    },
+    {
+      "id": "urn:ellephants:physics.condensed-materials",
+      "kind": "branch",
+      "label": "凝聚态、材料与软物质",
+      "englishLabel": "Condensed Matter, Materials & Soft Matter",
+      "slug": "condensed-matter",
+      "aliases": [
+        "凝聚态物理"
+      ],
+      "description": "固体、材料、聚合物、介观系统与软物质。",
+      "primaryParentId": "physics",
+      "order": 70,
+      "route": "/physics/condensed-matter/"
+    },
+    {
+      "id": "urn:ellephants:physics.plasma-beams",
+      "kind": "branch",
+      "label": "等离子体、束流与加速器",
+      "englishLabel": "Plasma, Beams & Accelerators",
+      "slug": "plasma-beams",
+      "aliases": [
+        "等离子体物理",
+        "束流与加速器"
+      ],
+      "description": "等离子体、粒子束以及加速器科学与技术。",
+      "primaryParentId": "physics",
+      "order": 80,
+      "route": "/physics/plasma-beams/"
+    },
+    {
+      "id": "urn:ellephants:physics.nuclear-particles",
+      "kind": "branch",
+      "label": "核物理、粒子与场",
+      "englishLabel": "Nuclear Physics, Particles & Fields",
+      "slug": "nuclear-particles",
+      "aliases": [
+        "核与粒子物理",
+        "粒子与场"
+      ],
+      "description": "核结构、高能粒子、基本相互作用与量子场论。",
+      "primaryParentId": "physics",
+      "order": 90,
+      "route": "/physics/nuclear-particles/"
+    },
+    {
+      "id": "urn:ellephants:physics.gravity-cosmos",
+      "kind": "branch",
+      "label": "引力、天体物理与宇宙学",
+      "englishLabel": "Gravitation, Astrophysics & Cosmology",
+      "slug": "gravity-cosmos",
+      "aliases": [
+        "引力与宇宙学",
+        "天体物理"
+      ],
+      "description": "相对论、引力、天体系统与宇宙整体演化。",
+      "primaryParentId": "physics",
+      "order": 100,
+      "route": "/physics/gravity-cosmos/"
+    },
+    {
+      "id": "urn:ellephants:physics.interdisciplinary",
+      "kind": "branch",
+      "label": "交叉学科",
+      "englishLabel": "Interdisciplinary Physics",
+      "slug": "interdisciplinary",
+      "aliases": [
+        "交叉物理",
+        "应用物理"
+      ],
+      "description": "能源、地球环境、生命系统、医学与其他交叉应用。",
+      "primaryParentId": "physics",
+      "order": 110,
+      "route": "/physics/interdisciplinary/"
+    },
+    {
+      "id": "urn:ellephants:physics.quantum-mechanics",
+      "kind": "concept",
+      "label": "量子力学",
+      "englishLabel": "Quantum Mechanics",
+      "slug": "quantum-mechanics",
+      "aliases": [
+        "量子理论"
+      ],
+      "description": "描述微观系统状态、测量与演化的基本理论。",
+      "primaryParentId": "physics.atomic-quantum"
+    },
+    {
+      "id": "urn:ellephants:contribution-1",
+      "type": "content",
+      "label": "量子力学教材推荐",
+      "description": "量子力学教材推荐",
+      "url": "/physics/quantum-modern/contribution-1",
+      "origin": "resource",
+      "domainId": "physics",
+      "branchId": "physics.atomic-quantum",
+      "topicIds": [
+        "physics.quantum-mechanics"
+      ],
+      "secondaryDomainIds": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "urn:ellephants:relation:1",
+      "type": "broader",
+      "from": "urn:ellephants:math.foundations",
+      "to": "urn:ellephants:mathematics"
+    },
+    {
+      "id": "urn:ellephants:relation:2",
+      "type": "broader",
+      "from": "urn:ellephants:math.discrete",
+      "to": "urn:ellephants:mathematics"
+    },
+    {
+      "id": "urn:ellephants:relation:3",
+      "type": "broader",
+      "from": "urn:ellephants:math.algebra-number",
+      "to": "urn:ellephants:mathematics"
+    },
+    {
+      "id": "urn:ellephants:relation:4",
+      "type": "broader",
+      "from": "urn:ellephants:math.analysis-equations",
+      "to": "urn:ellephants:mathematics"
+    },
+    {
+      "id": "urn:ellephants:relation:5",
+      "type": "broader",
+      "from": "urn:ellephants:math.geometry-topology",
+      "to": "urn:ellephants:mathematics"
+    },
+    {
+      "id": "urn:ellephants:relation:6",
+      "type": "broader",
+      "from": "urn:ellephants:math.probability-statistics",
+      "to": "urn:ellephants:mathematics"
+    },
+    {
+      "id": "urn:ellephants:relation:7",
+      "type": "broader",
+      "from": "urn:ellephants:math.computational",
+      "to": "urn:ellephants:mathematics"
+    },
+    {
+      "id": "urn:ellephants:relation:8",
+      "type": "broader",
+      "from": "urn:ellephants:math.optimization-modeling",
+      "to": "urn:ellephants:mathematics"
+    },
+    {
+      "id": "urn:ellephants:relation:9",
+      "type": "broader",
+      "from": "urn:ellephants:physics.foundations",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:10",
+      "type": "broader",
+      "from": "urn:ellephants:physics.mechanics-fluids",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:11",
+      "type": "broader",
+      "from": "urn:ellephants:physics.thermal-complex",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:12",
+      "type": "broader",
+      "from": "urn:ellephants:physics.electromagnetism-electrodynamics",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:13",
+      "type": "broader",
+      "from": "urn:ellephants:physics.optics-photonics",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:14",
+      "type": "broader",
+      "from": "urn:ellephants:physics.atomic-quantum",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:15",
+      "type": "broader",
+      "from": "urn:ellephants:physics.condensed-materials",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:16",
+      "type": "broader",
+      "from": "urn:ellephants:physics.plasma-beams",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:17",
+      "type": "broader",
+      "from": "urn:ellephants:physics.nuclear-particles",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:18",
+      "type": "broader",
+      "from": "urn:ellephants:physics.gravity-cosmos",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:19",
+      "type": "broader",
+      "from": "urn:ellephants:physics.interdisciplinary",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:20",
+      "type": "broader",
+      "from": "urn:ellephants:physics.quantum-mechanics",
+      "to": "urn:ellephants:physics.atomic-quantum"
+    },
+    {
+      "id": "urn:ellephants:relation:21",
+      "type": "in_domain",
+      "from": "urn:ellephants:contribution-1",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:22",
+      "type": "also_in_domain",
+      "from": "urn:ellephants:contribution-1",
+      "to": "urn:ellephants:mathematics"
+    },
+    {
+      "id": "urn:ellephants:relation:23",
+      "type": "in_branch",
+      "from": "urn:ellephants:contribution-1",
+      "to": "urn:ellephants:physics.atomic-quantum"
+    },
+    {
+      "id": "urn:ellephants:relation:24",
+      "type": "covers",
+      "from": "urn:ellephants:contribution-1",
+      "to": "urn:ellephants:physics.quantum-mechanics"
+    }
+  ]
+}

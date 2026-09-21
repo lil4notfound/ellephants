@@ -8,7 +8,7 @@ const docsRoot = resolve(projectRoot, 'docs')
 export default defineConfig({
   lang: 'zh-CN',
   title: 'ellephants',
-  description: '由社群共同维护的数学与物理学习指南。',
+  description: '由社群共同维护的知识、经验与创作地图。',
   base: process.env.DOCS_BASE || '/',
   cleanUrls: true,
   lastUpdated: true,
@@ -47,8 +47,10 @@ export default defineConfig({
       },
       {
         text: '提交内容',
-        link: 'https://github.com/lil4notfound/ellephants/issues/new?template=content-submission.yml',
-        noIcon: true
+        items: [
+          { text: '提交原创内容', link: 'https://github.com/lil4notfound/ellephants/issues/new?template=content-submission.yml' },
+          { text: '提交资源导览', link: 'https://github.com/lil4notfound/ellephants/issues/new?template=resource-submission.yml' }
+        ]
       }
     ],
     sidebar: createSidebar(docsRoot),

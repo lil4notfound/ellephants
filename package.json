@@ -6,14 +6,20 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs --host 127.0.0.1",
-    "build": "npm run check:content-areas && npm run check:content && npm run test:content-submission && vitepress build docs",
+    "build": "npm run check:taxonomy && npm run check:content-areas && npm run check:graph && npm run check:content && npm run test:content-submission && npm run test:taxonomy && vitepress build docs && npm run check:client-output",
     "preview": "vitepress preview docs --host 127.0.0.1",
     "check:content": "node scripts/validate-content.mjs",
+    "check:taxonomy": "node scripts/validate-taxonomy.mjs",
     "check:content-areas": "node scripts/sync-content-areas.mjs --check",
+    "check:graph": "node scripts/generate-knowledge-graph.mjs --check",
+    "check:client-output": "node scripts/validate-client-output.mjs",
     "sync:content-areas": "node scripts/sync-content-areas.mjs",
-    "test:content-submission": "node scripts/test-content-submission.mjs"
+    "sync:graph": "node scripts/generate-knowledge-graph.mjs",
+    "test:content-submission": "node scripts/test-content-submission.mjs",
+    "test:taxonomy": "node scripts/test-taxonomy.mjs"
   },
   "devDependencies": {
-    "vitepress": "1.6.4"
+    "vitepress": "1.6.4",
+    "yaml": "2.8.1"
   }
 }

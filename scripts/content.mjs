@@ -1,31 +1,19 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { basename, join, relative, sep } from 'node:path'
+import { parse } from 'yaml'
+import { branchesForDomain, domains } from './taxonomy.mjs'
 
 const ignoredDirectories = new Set(['assets', 'public', '.vitepress'])
 
 export function parseFrontmatter(source) {
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---/)
   if (!match) return {}
+  const data = parse(match[1])
+  return data && typeof data === 'object' ? data : {}
+}
 
-  const data = {}
-
-  for (const line of match[1].split(/\r?\n/)) {
-    const entry = line.match(/^([a-zA-Z][\w-]*):\s*(.*)$/)
-    if (!entry) continue
-
-    const [, key, rawValue] = entry
-    const value = rawValue.trim().replace(/^['"]|['"]$/g, '')
-
-    if (value === 'true' || value === 'false') {
-      data[key] = value === 'true'
-    } else if (/^-?\d+(\.\d+)?$/.test(value)) {
-      data[key] = Number(value)
-    } else {
-      data[key] = value
-    }
-  }
-
-  return data
+export function markdownBody(source) {
+  return source.replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n)*/, '')
 }
 
 function titleFromSource(source, fallback) {
@@ -105,5 +93,46 @@ function walkDirectory(directory, docsRoot) {
 
 export function createSidebar(docsRoot) {
   if (!existsSync(docsRoot)) return []
-  return walkDirectory(docsRoot, docsRoot)
+
+  const collectContentPages = (directories) => directories.flatMap((directory) => {
+    const absoluteDirectory = join(docsRoot, directory.replace(/^docs[\\/]/, ''))
+    if (!existsSync(absoluteDirectory)) return []
+    return walkDirectory(absoluteDirectory, docsRoot).filter((item) => item.link)
+  })
+
+  const sidebar = [
+    { text: '知识地图', link: '/knowledge-map/' }
+  ]
+
+  for (const domain of domains) {
+    const domainBranches = branchesForDomain(domain.id)
+    const items = domainBranches.length > 0
+      ? domainBranches.map((branch) => ({
+          text: branch.label,
+          link: branch.route,
+          collapsed: true,
+          items: collectContentPages(branch.contentDirectories || [branch.directory])
+            .map(({ order: _order, draft: _draft, ...item }) => item)
+        }))
+      : collectContentPages([domain.directory])
+
+    sidebar.push({
+      text: domain.label,
+      link: domain.route,
+      collapsed: domain.id === 'situation' || domain.id === 'furry',
+      items
+    })
+  }
+
+  const guideDirectory = join(docsRoot, 'guide')
+  if (existsSync(guideDirectory)) {
+    sidebar.push({
+      text: '参与共建',
+      link: '/guide/',
+      collapsed: true,
+      items: walkDirectory(guideDirectory, docsRoot)
+    })
+  }
+
+  return sidebar
 }

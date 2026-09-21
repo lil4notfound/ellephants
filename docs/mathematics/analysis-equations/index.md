@@ -1,14 +1,14 @@
 ---
-title: 分析与微分方程
-description: 极限、连续、测度、函数空间以及常微分和偏微分方程相关课程的领域入口。
+title: 分析、方程与动力系统
+description: 极限、连续、函数空间、微分方程和动力系统的领域入口。
 order: 10
 type: index
 status: review
 ---
 
-# 分析与微分方程
+# 分析、方程与动力系统
 
-本目录覆盖从微积分严格化到函数空间和微分方程的学习路径。
+分析研究极限、连续与函数空间，方程和动力系统描述变化如何随时间与空间展开。
 
 ## 内容
 
@@ -21,4 +21,4 @@ status: review
 
 ## 已收录页面
 
-<DirectoryContents />
+<BranchDirectory branch-id="math.analysis-equations" />

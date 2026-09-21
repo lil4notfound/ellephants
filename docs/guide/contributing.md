@@ -1,52 +1,38 @@
 ---
 title: 参与共建
-description: 通过结构化表单提交知识内容并完成审核发布。
+description: 分享原创内容，或为大家推荐值得阅读和使用的外部资源。
 order: 2
 type: guide
-status: review
+status: published
 ---
 
 # 参与共建
 
-知识内容通过仓库的“提交知识内容”表单投稿。投稿者只需填写内容，不需要选择文件目录、编写页面配置或操作分支。
+选择与你的投稿最接近的入口。两种投稿都需要登录 GitHub，提交后可以继续编辑和补充。
 
-<div class="submission-entry">
-  <span class="submission-entry__label">内容投稿入口</span>
-  <p class="submission-entry__title">填写表单，提交新的课程或专题内容</p>
-  <p class="submission-entry__description">系统会处理页面目录、文件名、格式与标签。提交表单需要登录 GitHub。</p>
-  <a class="submission-entry__button" href="https://github.com/lil4notfound/ellephants/issues/new?template=content-submission.yml" target="_blank" rel="noreferrer">打开“提交知识内容”表单 <span aria-hidden="true">↗</span></a>
+<div class="submission-options">
+  <div class="submission-entry">
+    <span class="submission-entry__label">原创内容</span>
+    <p class="submission-entry__title">分享文章、教程、经验或创作</p>
+    <p class="submission-entry__description">适合你亲自撰写的知识内容、学习方法、处境经验和科学创作。</p>
+    <a class="submission-entry__button" href="https://github.com/lil4notfound/ellephants/issues/new?template=content-submission.yml" target="_blank" rel="noreferrer">提交原创内容 <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="submission-entry">
+    <span class="submission-entry__label">资源导览</span>
+    <p class="submission-entry__title">推荐书籍、论文、网站或工具</p>
+    <p class="submission-entry__description">请说明推荐理由、适用人群、原始来源、访问方式和权利信息。</p>
+    <a class="submission-entry__button" href="https://github.com/lil4notfound/ellephants/issues/new?template=resource-submission.yml" target="_blank" rel="noreferrer">提交资源导览 <span aria-hidden="true">↗</span></a>
+  </div>
 </div>
 
-## 投稿流程
+## 附件与外部资源
 
-1. 点击上方按钮，打开“提交知识内容”表单。
-2. 选择目标领域、页面类型和内容属性，填写各项内容后提交。
-3. 系统检查表单是否完整；通过后，Issue 会进入等待审核状态。
-4. 维护者核对知识内容、资料来源和授权信息。
-5. 审核通过后，系统自动生成页面、执行构建检查并发布，随后关闭 Issue。
+- 把文件拖入“附件”输入框即可上传，页面会显示原始文件名。
+- 支持 PDF、DOCX、XLSX、PPTX、ZIP、GZ、TAR.GZ、TXT 和 CSV。
+- 单个文件不超过 25 MB，每次最多 5 个。
+- 大文件和视频请填写外部链接。
+- 只有确认可以分发的文件才能作为附件上传；不确定时请只提供原始页面链接。
 
-## 需要填写的内容
+## 提交以后
 
-| 字段 | 填写要求 |
-| --- | --- |
-| 目标领域 | 选择内容主要归属的数学或物理领域 |
-| 页面类型 | 选择课程页或专题文章 |
-| 页面标题 | 使用清晰、稳定的通行名称 |
-| 页面简介 | 用一至两句话说明内容范围 |
-| 内容属性 | 选择理论、实验、方法或综合 |
-| 署名 | 可选；留空时使用提交者的 GitHub 用户名 |
-| 先修知识 | 可选；每行填写一项真实需要的先修知识 |
-| 页面定位 | 说明研究对象、适用读者和内容边界 |
-| 学习目标 | 每行填写一项可验证的学习目标 |
-| 主要内容 | 使用 Markdown 编写，不插入原始 HTML |
-| 资料链接 | 每行按表单规定的五项格式填写，可留空 |
-| 补充说明 | 可选；填写常见问题、版本差异或维护信息 |
-| 授权确认 | 确认原创投稿采用 CC BY-SA 4.0，第三方内容已标明权利信息 |
-
-## 审核状态
-
-- `content-submission`：表单检查通过，等待内容审核。
-- `content-approved`：维护者确认可以发布，触发自动生成。
-- `content-published`：页面已经生成并发布。
-
-若投稿需要修正，直接编辑 Issue 中的表单内容；系统会在保存后重新检查，之后再由维护者审核。
+提交内容会先经过格式和附件检查，再由维护者核对正文、来源与授权。需要修改时，直接编辑原来的 Issue 即可。审核通过后，页面和附件会一起发布。
