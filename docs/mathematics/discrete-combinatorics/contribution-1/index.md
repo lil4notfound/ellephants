@@ -26,7 +26,7 @@ draft: false
 
 这是一份依据 Ryan O’Donnell 的 *Analysis of Boolean Functions* 制作的原创交互学习指南。内容覆盖全书 11 章，并将核心定义、重要结论和应用组织成可以逐节阅读与操作的学习路径。
 
-<p><a class="VPButton brand" href="./app/">开始阅读交互电子书 →</a></p>
+<p><StaticPageLink class="VPButton brand" href="/mathematics/discrete-combinatorics/contribution-1/app/">开始阅读交互电子书 →</StaticPageLink></p>
 
 ## 可以怎样学习
 

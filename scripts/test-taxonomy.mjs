@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { parse as parseYaml } from 'yaml'
 import { createSidebar, markdownBody, parseFrontmatter } from './content.mjs'
@@ -65,8 +65,20 @@ assert.equal(quantumFrontmatter.branch_id, 'physics.atomic-quantum')
 assert.deepEqual(quantumFrontmatter.topic_ids, ['physics.quantum-mechanics'])
 assert.equal(quantumFrontmatter.attachments, undefined)
 
+const interactiveGuidePath = resolve(docsRoot, 'mathematics/discrete-combinatorics/contribution-1/index.md')
+const interactiveGuideSource = readFileSync(interactiveGuidePath, 'utf8')
+const interactiveGuideFrontmatter = parseFrontmatter(interactiveGuideSource)
+assert.equal(interactiveGuideFrontmatter.content_id, 'boolean-functions-interactive')
+assert.equal(interactiveGuideFrontmatter.branch_id, 'math.discrete')
+assert.match(interactiveGuideSource, /href="\/mathematics\/discrete-combinatorics\/contribution-1\/app\/"/)
+assert.ok(existsSync(resolve(docsRoot, 'public/mathematics/discrete-combinatorics/contribution-1/app/index.html')))
+const staticPageLinkSource = readFileSync(resolve(docsRoot, '.vitepress/theme/components/StaticPageLink.vue'), 'utf8')
+assert.match(staticPageLinkSource, /:href="withBase\(href\)" target="_self"/)
+
 const sidebarSource = JSON.stringify(createSidebar(docsRoot))
 assert.match(sidebarSource, /\/physics\/quantum-modern\/contribution-1/)
+assert.match(sidebarSource, /\/mathematics\/discrete-combinatorics\/contribution-1/)
+assert.doesNotMatch(sidebarSource, /\/mathematics\/discrete-combinatorics\/boolean-functions/)
 assert.match(sidebarSource, /\/physics\/electromagnetism\//)
 assert.match(sidebarSource, /\/physics\/optics-photonics\//)
 assert.doesNotMatch(sidebarSource, /\/physics\/experiments/)
@@ -77,4 +89,4 @@ assert.match(sidebarSource, /处境/)
 assert.match(sidebarSource, /毛茸茸/)
 assert.doesNotMatch(sidebarSource, /\/topics\//)
 
-console.log('分类结构和量子页面保护测试通过。')
+console.log('分类结构、量子页面保护和交互内容路由测试通过。')

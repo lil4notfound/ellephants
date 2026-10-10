@@ -7,6 +7,7 @@ import DirectoryContents from './components/DirectoryContents.vue'
 import DomainDirectory from './components/DomainDirectory.vue'
 import HomeTopics from './components/HomeTopics.vue'
 import KnowledgeAtlas from './components/KnowledgeAtlas.vue'
+import StaticPageLink from './components/StaticPageLink.vue'
 import VisualThemeSwitch from './components/VisualThemeSwitch.vue'
 import './style.css'
 
@@ -23,5 +24,6 @@ export default {
     app.component('DomainDirectory', DomainDirectory)
     app.component('HomeTopics', HomeTopics)
     app.component('KnowledgeAtlas', KnowledgeAtlas)
+    app.component('StaticPageLink', StaticPageLink)
   }
 } satisfies Theme
