@@ -414,6 +414,18 @@
       "secondaryDomainIds": [
         "physics"
       ]
+    },
+    {
+      "id": "contribution-5",
+      "type": "content",
+      "label": "如何读本科",
+      "description": "在ADHD和PTSD中的一种生存经验",
+      "url": "/situation/contribution-5",
+      "origin": "original",
+      "domainId": "situation",
+      "branchId": "",
+      "topicIds": [],
+      "secondaryDomainIds": []
     }
   ],
   "relations": [
@@ -571,6 +583,11 @@
       "from": "contribution-2",
       "type": "also_in_domain",
       "to": "physics"
+    },
+    {
+      "from": "contribution-5",
+      "type": "in_domain",
+      "to": "situation"
     }
   ],
   "collections": []

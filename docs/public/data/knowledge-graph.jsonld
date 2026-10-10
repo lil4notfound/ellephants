@@ -434,6 +434,18 @@
       ]
     },
     {
+      "id": "urn:ellephants:contribution-5",
+      "type": "content",
+      "label": "如何读本科",
+      "description": "在ADHD和PTSD中的一种生存经验",
+      "url": "/situation/contribution-5",
+      "origin": "original",
+      "domainId": "situation",
+      "branchId": "",
+      "topicIds": [],
+      "secondaryDomainIds": []
+    },
+    {
       "id": "urn:ellephants:relation:1",
       "type": "broader",
       "from": "urn:ellephants:math.foundations",
@@ -618,6 +630,12 @@
       "type": "also_in_domain",
       "from": "urn:ellephants:contribution-2",
       "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:32",
+      "type": "in_domain",
+      "from": "urn:ellephants:contribution-5",
+      "to": "urn:ellephants:situation"
     }
   ]
 }
