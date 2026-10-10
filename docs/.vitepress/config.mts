@@ -13,6 +13,9 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   srcExclude: ['_template.md'],
+  markdown: {
+    breaks: true
+  },
   outDir: resolve(projectRoot, 'dist'),
   cacheDir: resolve(projectRoot, '.cache/vitepress'),
   head: [
