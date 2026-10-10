@@ -354,6 +354,18 @@
       "route": "/physics/interdisciplinary/"
     },
     {
+      "id": "urn:ellephants:math.combinatorics",
+      "kind": "concept",
+      "label": "组合数学",
+      "englishLabel": "Combinatorics",
+      "slug": "combinatorics",
+      "aliases": [
+        "组合学"
+      ],
+      "description": "研究有限或离散结构的计数、构造、存在性与极值性质。",
+      "primaryParentId": "math.discrete"
+    },
+    {
       "id": "urn:ellephants:physics.quantum-mechanics",
       "kind": "concept",
       "label": "量子力学",
@@ -364,6 +376,20 @@
       ],
       "description": "描述微观系统状态、测量与演化的基本理论。",
       "primaryParentId": "physics.atomic-quantum"
+    },
+    {
+      "id": "urn:ellephants:boolean-functions-interactive",
+      "type": "content",
+      "label": "布尔函数分析：交互学习指南",
+      "description": "通过分章节讲解、概念检查和数学实验学习布尔函数分析。",
+      "url": "/mathematics/discrete-combinatorics/boolean-functions",
+      "origin": "original",
+      "domainId": "mathematics",
+      "branchId": "math.discrete",
+      "topicIds": [
+        "math.combinatorics"
+      ],
+      "secondaryDomainIds": []
     },
     {
       "id": "urn:ellephants:contribution-1",
@@ -498,29 +524,53 @@
     {
       "id": "urn:ellephants:relation:20",
       "type": "broader",
+      "from": "urn:ellephants:math.combinatorics",
+      "to": "urn:ellephants:math.discrete"
+    },
+    {
+      "id": "urn:ellephants:relation:21",
+      "type": "broader",
       "from": "urn:ellephants:physics.quantum-mechanics",
       "to": "urn:ellephants:physics.atomic-quantum"
     },
     {
-      "id": "urn:ellephants:relation:21",
-      "type": "in_domain",
-      "from": "urn:ellephants:contribution-1",
-      "to": "urn:ellephants:physics"
-    },
-    {
       "id": "urn:ellephants:relation:22",
-      "type": "also_in_domain",
-      "from": "urn:ellephants:contribution-1",
+      "type": "in_domain",
+      "from": "urn:ellephants:boolean-functions-interactive",
       "to": "urn:ellephants:mathematics"
     },
     {
       "id": "urn:ellephants:relation:23",
       "type": "in_branch",
+      "from": "urn:ellephants:boolean-functions-interactive",
+      "to": "urn:ellephants:math.discrete"
+    },
+    {
+      "id": "urn:ellephants:relation:24",
+      "type": "covers",
+      "from": "urn:ellephants:boolean-functions-interactive",
+      "to": "urn:ellephants:math.combinatorics"
+    },
+    {
+      "id": "urn:ellephants:relation:25",
+      "type": "in_domain",
+      "from": "urn:ellephants:contribution-1",
+      "to": "urn:ellephants:physics"
+    },
+    {
+      "id": "urn:ellephants:relation:26",
+      "type": "also_in_domain",
+      "from": "urn:ellephants:contribution-1",
+      "to": "urn:ellephants:mathematics"
+    },
+    {
+      "id": "urn:ellephants:relation:27",
+      "type": "in_branch",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:physics.atomic-quantum"
     },
     {
-      "id": "urn:ellephants:relation:24",
+      "id": "urn:ellephants:relation:28",
       "type": "covers",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:physics.quantum-mechanics"

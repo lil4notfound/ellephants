@@ -336,6 +336,18 @@
       "route": "/physics/interdisciplinary/"
     },
     {
+      "id": "math.combinatorics",
+      "kind": "concept",
+      "label": "组合数学",
+      "englishLabel": "Combinatorics",
+      "slug": "combinatorics",
+      "aliases": [
+        "组合学"
+      ],
+      "description": "研究有限或离散结构的计数、构造、存在性与极值性质。",
+      "primaryParentId": "math.discrete"
+    },
+    {
       "id": "physics.quantum-mechanics",
       "kind": "concept",
       "label": "量子力学",
@@ -346,6 +358,20 @@
       ],
       "description": "描述微观系统状态、测量与演化的基本理论。",
       "primaryParentId": "physics.atomic-quantum"
+    },
+    {
+      "id": "boolean-functions-interactive",
+      "type": "content",
+      "label": "布尔函数分析：交互学习指南",
+      "description": "通过分章节讲解、概念检查和数学实验学习布尔函数分析。",
+      "url": "/mathematics/discrete-combinatorics/boolean-functions",
+      "origin": "original",
+      "domainId": "mathematics",
+      "branchId": "math.discrete",
+      "topicIds": [
+        "math.combinatorics"
+      ],
+      "secondaryDomainIds": []
     },
     {
       "id": "contribution-1",
@@ -461,9 +487,29 @@
       "to": "physics"
     },
     {
+      "from": "math.combinatorics",
+      "type": "broader",
+      "to": "math.discrete"
+    },
+    {
       "from": "physics.quantum-mechanics",
       "type": "broader",
       "to": "physics.atomic-quantum"
+    },
+    {
+      "from": "boolean-functions-interactive",
+      "type": "in_domain",
+      "to": "mathematics"
+    },
+    {
+      "from": "boolean-functions-interactive",
+      "type": "in_branch",
+      "to": "math.discrete"
+    },
+    {
+      "from": "boolean-functions-interactive",
+      "type": "covers",
+      "to": "math.combinatorics"
     },
     {
       "from": "contribution-1",
