@@ -408,6 +408,20 @@
       ]
     },
     {
+      "id": "urn:ellephants:contribution-2",
+      "type": "content",
+      "label": "（原标题）那些年教练让我相信的",
+      "description": "文章写于2022年7月我大学毕业的时候，回忆了我高中三年与我的物理竞赛教练的故事。恩师于2023年不幸病逝，谨以此文纪念。",
+      "url": "/situation/contribution-2",
+      "origin": "original",
+      "domainId": "situation",
+      "branchId": "",
+      "topicIds": [],
+      "secondaryDomainIds": [
+        "physics"
+      ]
+    },
+    {
       "id": "urn:ellephants:relation:1",
       "type": "broader",
       "from": "urn:ellephants:math.foundations",
@@ -574,6 +588,18 @@
       "type": "covers",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:physics.quantum-mechanics"
+    },
+    {
+      "id": "urn:ellephants:relation:29",
+      "type": "in_domain",
+      "from": "urn:ellephants:contribution-2",
+      "to": "urn:ellephants:situation"
+    },
+    {
+      "id": "urn:ellephants:relation:30",
+      "type": "also_in_domain",
+      "from": "urn:ellephants:contribution-2",
+      "to": "urn:ellephants:physics"
     }
   ]
 }
