@@ -360,6 +360,18 @@
       "primaryParentId": "physics.atomic-quantum"
     },
     {
+      "id": "contribution-3",
+      "type": "content",
+      "label": "独自归",
+      "description": "绝对女主角的武侠小说吧hh 说不定猴年马月会有后续",
+      "url": "/furry/contribution-3",
+      "origin": "original",
+      "domainId": "furry",
+      "branchId": "",
+      "topicIds": [],
+      "secondaryDomainIds": []
+    },
+    {
       "id": "contribution-4",
       "type": "content",
       "label": "乳状云",
@@ -404,7 +416,7 @@
     {
       "id": "contribution-2",
       "type": "content",
-      "label": "（原标题）那些年教练让我相信的",
+      "label": "那些年教练让我相信的",
       "description": "文章写于2022年7月我大学毕业的时候，回忆了我高中三年与我的物理竞赛教练的故事。恩师于2023年不幸病逝，谨以此文纪念。",
       "url": "/situation/contribution-2",
       "origin": "original",
@@ -533,6 +545,11 @@
       "from": "physics.quantum-mechanics",
       "type": "broader",
       "to": "physics.atomic-quantum"
+    },
+    {
+      "from": "contribution-3",
+      "type": "in_domain",
+      "to": "furry"
     },
     {
       "from": "contribution-4",

@@ -378,6 +378,18 @@
       "primaryParentId": "physics.atomic-quantum"
     },
     {
+      "id": "urn:ellephants:contribution-3",
+      "type": "content",
+      "label": "独自归",
+      "description": "绝对女主角的武侠小说吧hh 说不定猴年马月会有后续",
+      "url": "/furry/contribution-3",
+      "origin": "original",
+      "domainId": "furry",
+      "branchId": "",
+      "topicIds": [],
+      "secondaryDomainIds": []
+    },
+    {
       "id": "urn:ellephants:contribution-4",
       "type": "content",
       "label": "乳状云",
@@ -422,7 +434,7 @@
     {
       "id": "urn:ellephants:contribution-2",
       "type": "content",
-      "label": "（原标题）那些年教练让我相信的",
+      "label": "那些年教练让我相信的",
       "description": "文章写于2022年7月我大学毕业的时候，回忆了我高中三年与我的物理竞赛教练的故事。恩师于2023年不幸病逝，谨以此文纪念。",
       "url": "/situation/contribution-2",
       "origin": "original",
@@ -574,65 +586,71 @@
     {
       "id": "urn:ellephants:relation:22",
       "type": "in_domain",
-      "from": "urn:ellephants:contribution-4",
+      "from": "urn:ellephants:contribution-3",
       "to": "urn:ellephants:furry"
     },
     {
       "id": "urn:ellephants:relation:23",
       "type": "in_domain",
+      "from": "urn:ellephants:contribution-4",
+      "to": "urn:ellephants:furry"
+    },
+    {
+      "id": "urn:ellephants:relation:24",
+      "type": "in_domain",
       "from": "urn:ellephants:boolean-functions-interactive",
       "to": "urn:ellephants:mathematics"
     },
     {
-      "id": "urn:ellephants:relation:24",
+      "id": "urn:ellephants:relation:25",
       "type": "in_branch",
       "from": "urn:ellephants:boolean-functions-interactive",
       "to": "urn:ellephants:math.discrete"
     },
     {
-      "id": "urn:ellephants:relation:25",
+      "id": "urn:ellephants:relation:26",
       "type": "covers",
       "from": "urn:ellephants:boolean-functions-interactive",
       "to": "urn:ellephants:math.combinatorics"
     },
     {
-      "id": "urn:ellephants:relation:26",
+      "id": "urn:ellephants:relation:27",
       "type": "in_domain",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:physics"
     },
     {
-      "id": "urn:ellephants:relation:27",
+      "id": "urn:ellephants:relation:28",
       "type": "also_in_domain",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:mathematics"
     },
     {
-      "id": "urn:ellephants:relation:28",
+      "id": "urn:ellephants:relation:29",
       "type": "in_branch",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:physics.atomic-quantum"
     },
     {
-      "id": "urn:ellephants:relation:29",
+      "id": "urn:ellephants:relation:30",
       "type": "covers",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:physics.quantum-mechanics"
     },
     {
-      "id": "urn:ellephants:relation:30",
+      "id": "urn:ellephants:relation:31",
       "type": "in_domain",
       "from": "urn:ellephants:contribution-2",
       "to": "urn:ellephants:situation"
     },
     {
-      "id": "urn:ellephants:relation:31",
+      "id": "urn:ellephants:relation:32",
       "type": "also_in_domain",
       "from": "urn:ellephants:contribution-2",
       "to": "urn:ellephants:physics"
     },
     {
-      "id": "urn:ellephants:relation:32",
+      "id": "urn:ellephants:relation:33",
       "type": "in_domain",
       "from": "urn:ellephants:contribution-5",
       "to": "urn:ellephants:situation"
