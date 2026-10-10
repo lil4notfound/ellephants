@@ -69,6 +69,10 @@ const issueBody = `
 
 符号约定以后续版本为准。
 
+### 给管理员留言
+
+请在合并前检查公式编号。
+
 ### 媒体平台转发偏好
 
 允许转发并保留署名
@@ -106,6 +110,8 @@ assert.match(output, /attachments: \[{"name":"量子力学讲义 2026\.pdf","url
 assert.match(output, /## 附件\n\n<AttachmentDownloads \/>/)
 assert.match(output, /### 静电场/)
 assert.match(output, /\[示例讲义\]\(https:\/\/example\.com\/notes\.pdf\)/)
+assert.match(output, /## 补充说明\n\n符号约定以后续版本为准。/)
+assert.doesNotMatch(output, /请在合并前检查公式编号。/)
 assert.doesNotMatch(output, /\{\{[A-Z_]+\}\}/)
 
 const noAttachmentBody = issueBody.replace(
@@ -246,6 +252,10 @@ ADHD 与学习
 ### 补充说明
 
 
+### 给管理员留言
+
+请管理员核对资源授权说明。
+
 ### 媒体平台转发偏好
 
 允许转发并保留署名
@@ -266,6 +276,14 @@ assert.match(originalOutput, /secondary_domain_ids: \["mathematics"\]/)
 assert.match(originalOutput, /keywords: \["番茄钟调整"\]/)
 assert.match(originalOutput, /content_type: experience/)
 assert.match(originalOutput, /## 阅读收获/)
+
+const emptyDropdownSubmission = prepareSubmission({
+  body: originalBody.replace('### 主分支\n\n### 主题词', '### 主分支\n\nNone\n\n### 主题词'),
+  issueNumber: '54',
+  issueAuthor: 'tester'
+})
+assert.equal(emptyDropdownSubmission.directory, 'docs/situation')
+assert.equal(emptyDropdownSubmission.branchId, '')
 
 assert.throws(
   () => prepareSubmission({
@@ -359,5 +377,6 @@ assert.match(resourceOutput, /source_url: "https:\/\/example\.com\/quantum-book"
 assert.match(resourceOutput, /## 资源信息/)
 assert.match(resourceOutput, /## 推荐说明/)
 assert.doesNotMatch(resourceOutput, /## 附件/)
+assert.doesNotMatch(resourceOutput, /请管理员核对资源授权说明。/)
 
 console.log('内容投稿自动化测试通过。')

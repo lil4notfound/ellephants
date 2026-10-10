@@ -156,6 +156,12 @@ body:
       label: 补充说明
       description: 可选；填写版本、语言、失效备份或其他补充信息。
 
+  - type: textarea
+    id: admin-message
+    attributes:
+      label: 给管理员留言
+      description: 可选；此处内容仅供管理员查看，不会展示在发布页面。Issue 本身公开可见，请勿填写敏感信息。
+
   - type: dropdown
     id: media-repost
     attributes:

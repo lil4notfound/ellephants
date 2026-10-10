@@ -41,6 +41,7 @@ const fieldLabels = [
   '资料链接',
   '附件',
   '补充说明',
+  '给管理员留言',
   '媒体平台转发偏好',
   '授权确认'
 ]
@@ -104,7 +105,7 @@ function normalizeResponse(value) {
     .replace(/<!--[\s\S]*?-->/g, '')
     .trim()
 
-  return /^_?(?:no response|无回应)_?$/i.test(cleaned) ? '' : cleaned
+  return /^_?(?:no response|none|无回应)_?$/i.test(cleaned) ? '' : cleaned
 }
 
 export function parseIssueForm(body) {
