@@ -22,7 +22,7 @@ attachments: []
 draft: false
 ---
 
-# （原标题）那些年教练让我相信的
+# 那些年教练让我相信的
 
 <p class="article-byline"><span>作者：</span>火星高级生物</p>
 
