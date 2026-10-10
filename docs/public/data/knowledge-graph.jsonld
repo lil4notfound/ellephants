@@ -378,6 +378,18 @@
       "primaryParentId": "physics.atomic-quantum"
     },
     {
+      "id": "urn:ellephants:contribution-4",
+      "type": "content",
+      "label": "乳状云",
+      "description": "不含堕胎桥段的青春疼痛小说（",
+      "url": "/furry/contribution-4",
+      "origin": "original",
+      "domainId": "furry",
+      "branchId": "",
+      "topicIds": [],
+      "secondaryDomainIds": []
+    },
+    {
       "id": "urn:ellephants:boolean-functions-interactive",
       "type": "content",
       "label": "布尔函数分析：交互学习指南",
@@ -550,53 +562,59 @@
     {
       "id": "urn:ellephants:relation:22",
       "type": "in_domain",
+      "from": "urn:ellephants:contribution-4",
+      "to": "urn:ellephants:furry"
+    },
+    {
+      "id": "urn:ellephants:relation:23",
+      "type": "in_domain",
       "from": "urn:ellephants:boolean-functions-interactive",
       "to": "urn:ellephants:mathematics"
     },
     {
-      "id": "urn:ellephants:relation:23",
+      "id": "urn:ellephants:relation:24",
       "type": "in_branch",
       "from": "urn:ellephants:boolean-functions-interactive",
       "to": "urn:ellephants:math.discrete"
     },
     {
-      "id": "urn:ellephants:relation:24",
+      "id": "urn:ellephants:relation:25",
       "type": "covers",
       "from": "urn:ellephants:boolean-functions-interactive",
       "to": "urn:ellephants:math.combinatorics"
     },
     {
-      "id": "urn:ellephants:relation:25",
+      "id": "urn:ellephants:relation:26",
       "type": "in_domain",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:physics"
     },
     {
-      "id": "urn:ellephants:relation:26",
+      "id": "urn:ellephants:relation:27",
       "type": "also_in_domain",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:mathematics"
     },
     {
-      "id": "urn:ellephants:relation:27",
+      "id": "urn:ellephants:relation:28",
       "type": "in_branch",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:physics.atomic-quantum"
     },
     {
-      "id": "urn:ellephants:relation:28",
+      "id": "urn:ellephants:relation:29",
       "type": "covers",
       "from": "urn:ellephants:contribution-1",
       "to": "urn:ellephants:physics.quantum-mechanics"
     },
     {
-      "id": "urn:ellephants:relation:29",
+      "id": "urn:ellephants:relation:30",
       "type": "in_domain",
       "from": "urn:ellephants:contribution-2",
       "to": "urn:ellephants:situation"
     },
     {
-      "id": "urn:ellephants:relation:30",
+      "id": "urn:ellephants:relation:31",
       "type": "also_in_domain",
       "from": "urn:ellephants:contribution-2",
       "to": "urn:ellephants:physics"

@@ -360,6 +360,18 @@
       "primaryParentId": "physics.atomic-quantum"
     },
     {
+      "id": "contribution-4",
+      "type": "content",
+      "label": "乳状云",
+      "description": "不含堕胎桥段的青春疼痛小说（",
+      "url": "/furry/contribution-4",
+      "origin": "original",
+      "domainId": "furry",
+      "branchId": "",
+      "topicIds": [],
+      "secondaryDomainIds": []
+    },
+    {
       "id": "boolean-functions-interactive",
       "type": "content",
       "label": "布尔函数分析：交互学习指南",
@@ -509,6 +521,11 @@
       "from": "physics.quantum-mechanics",
       "type": "broader",
       "to": "physics.atomic-quantum"
+    },
+    {
+      "from": "contribution-4",
+      "type": "in_domain",
+      "to": "furry"
     },
     {
       "from": "boolean-functions-interactive",
